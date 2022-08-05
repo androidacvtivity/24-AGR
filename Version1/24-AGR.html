@@ -77,7 +77,7 @@
     ["Cap.I - Productia agricola animala obtinuta de la 1 ianuarie pina la data de raport (cumulat de la inceputul anului)"]
 </h3>
 </p>
-<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<table border="0"   id="CAP1"  cellspacing="0" cellpadding="0" width="100%">
     <tbody>
         <tr>
             <td width="59">
@@ -285,64 +285,56 @@
 </table>
 
 
-<h3 align="center">3. ["Transporturi pe grupe de mărfuri"]</h3>
-<p align="right" style="font-style: italic;">
-    (["Datele se înscriu cu o zecimală"])
-</p>
+<h3 align="center"> ["Cap.II - Cresterea vitelor si pasarilor de la 1 ianuarie pina la data de raport (cumulat de la inceputul anului)"]</h3>
+
 <div align="center">
-    <table border="0" id="table3" cellspacing="0" cellpadding="0" width="716">
+    <table border="0" id="CAP2" cellspacing="0" cellpadding="0" width="716">
         <thead>
             <tr>
-                <td width="189" rowspan="2">
-                    <p align="center">
-                        ["Grupa de mărfuri"]
-                    </p>
-                </td>
                 <td width="45" rowspan="2">
                     <p align="center">
-                        ["Cod rînd"]
+                        ["Nr. rînd"]
+                    </p>
+                </td>
+                <td width="189" rowspan="2">
+                    <p align="center">
+                       ["Denumirea indicatorilor"]
                     </p>
                 </td>
                 <td width="66" rowspan="2">
                     <p align="center">
-                        ["Mărfuri transportate"]<sup>*</sup> – ["total"]
+                        ["Bovine"]
                     </p>
                 </td>
-                <td width="163" colspan="3">
-                    <p align="center">
-                        ["din care, mărfuri"]:
-                    </p>
-                </td>
+            
             </tr>
             <tr>
                 <td width="54">
+                  
                     <p align="center">
-                        ["intrate"]
-                    </p>
-                    <p align="center">
-                        ["în ţară (import)"]
+                        ["Porcine)"]
                     </p>
 
                 </td>
                 <td width="54">
                     <p align="center">
-                        ["ieşite din ţаră (export)"]
+                        ["Ovine si caprine"]
                     </p>
 
                 </td>
                 <td width="54">
                     <p align="center">
-                        ["în tranzit"]
+                        ["Păsari"]
                     </p>
                 </td>
             </tr>
             <tr>
-                <td width="189">
+                <td width="45">
                     <p align="center">
                         ["А"]
                     </p>
                 </td>
-                <td width="45">
+                <td width="189">
                     <p align="center">
                         ["B"]
                     </p>
@@ -369,540 +361,233 @@
                 </td>
             </tr>
             <tr>
-                <td width="189">
-                    <p>
-                        <strong>["Total"](02+03+04+… +21)</strong>
-                    </p>
-                </td>
                 <td width="45">
                     <p align="center">
-                        <strong>01</strong>
+                    130
                     </p>
                 </td>
-                <td width="66">
-                    @dec_table3_row_r01c1;
+                <td width="189">
+                    <p>
+                    [Masa vie a produselor obtinuti (chintale)]
+                    </p>
                 </td>
-                <td width="54">
-                    @dec_table3_row_r01c2;
+                <td width="66" align="center">
+                     @CAP2_R130_C1;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r01c3;
+                <td width="54" align="center">
+                    @CAP2_R130_C2;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r01c4;
+                <td width="54" align="center">
+                    @CAP2_R130_C3;
+                </td>
+                <td width="54" align="center">
+                    @CAP2_R130_C4;
                 </td>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td width="189">
-                    <p>
-                        ["Produse agricole, de vînătoare şi forestiere; peşte şi alte produse pescăreşti"]
-                    </p>
-                </td>
                 <td width="45">
                     <p align="center">
-                        02
+                       140
                     </p>
                 </td>
-                <td width="66">
-                    @dec_table3_row_r02c1;
+                <td width="189">
+                    <p>
+                    ["Spor de masă obținut la creștere si îngrășare (chintale)"]
+                    </p>
                 </td>
-                <td width="54">
-                    @dec_table3_row_r02c2;
+                <td width="66" align="center">
+                    @CAP2_R140_C1;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r02c3;
+                <td width="54" align="center">
+                    @CAP2_R140_C2;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r02c4;
+                <td width="54" align="center">
+                    @CAP2_R140_C3;
+                </td>
+                <td width="54" align="center">
+                    @CAP2_R140_C4;
                 </td>
 
             </tr>
             <tr>
-                <td width="189">
-                    <p>
-                        ["Cărbune şi lignit; ţiţei şi gaze naturale"]
-                    </p>
-                </td>
                 <td width="45">
-                    <p align="center">
-                        03
+                    <p align="center"> 
+                    150 
                     </p>
                 </td>
-                <td width="66">
-                    @dec_table3_row_r03c1;
+                <td width="189">
+                    <p >
+                        ["din care purcei păna la 2 luni (păna la înțarcare), miei pina la înțarcare (chintale)"]
+                    </p>
                 </td>
-                <td width="54">
-                    @dec_table3_row_r03c2;
+                <td width="66" align="center">
+                   X
                 </td>
-                <td width="54">
-                    @dec_table3_row_r03c3;
+                <td width="54" align="center" >
+                    @CAP2_R150_C2;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r03c4;
+                <td width="54" align="center">
+                    @CAP2_R150_C3;
+                </td>
+                <td width="54" align="center">
+                  X
                 </td>
 
             </tr>
             <tr>
-                <td width="189">
-                    <p>
-                        ["Minereuri metalifere şi alte produse de minerit şi exploatare în carieră; turbă; uraniu şi
-                        toriu"]
-                    </p>
-                </td>
                 <td width="45">
                     <p align="center">
-                        04
+                        160
                     </p>
                 </td>
-                <td width="66">
-                    @dec_table3_row_r04c1;
+                <td width="189">
+                    <p>
+                       ["Zile - capete furajate la creștere si îngrașare"]
+                    </p>
                 </td>
-                <td width="54">
-                    @dec_table3_row_r04c2;
+                <td width="66" align="center">
+                @CAP2_R160_C1;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r04c3;
+                <td width="54" align="center">
+                    @CAP2_R160_C2;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r04c4;
+                <td width="54" align="center">
+                  @CAP2_R160_C3;
+                </td>
+                <td width="54" align="center">
+                X
                 </td>
 
             </tr>
             <tr>
-                <td width="189">
-                    <p>
-                        ["Produse alimentare, băuturi şi tutun"]
-                    </p>
-                </td>
                 <td width="45">
                     <p align="center">
-                        05
+                      200 
                     </p>
                 </td>
-                <td width="66">
-                    @dec_table3_row_r05c1;
+                <td width="189">
+                    <p>
+                        ["Masa tineretului animal si păsarilor pierite precum si masa vitelor pierite la îngrașare (dupa rezultatele ultimei
+                        cîntariri) (chintale)"]
+                    </p>
                 </td>
-                <td width="54">
-                    @dec_table3_row_r05c2;
+                <td width="66" align="center">
+                    @CAP2_R200_C1;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r05c3;
+                <td width="54" align="center">
+                    @CAP2_R200_C2;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r05c4;
+                <td width="54" align="center">
+                    @CAP2_R200_C3;
+                </td>
+                <td width="54" align="center">
+                    @CAP2_R200_C4;
                 </td>
 
             </tr>
             <tr>
-                <td width="189">
-                    <p>
-                        ["Textile şi produse textile; piele şi produse din piele"]
-                    </p>
-                </td>
                 <td width="45">
                     <p align="center">
-                        06
+                     210  
                     </p>
                 </td>
-                <td width="66">
-                    @dec_table3_row_r06c1;
+                <td width="189">
+                    <p>
+                    ["Total creștere în masă vie (chintale)"]
+                    </p>
                 </td>
-                <td width="54">
-                    @dec_table3_row_r06c2;
+                <td width="66" align="center">
+                    @CAP2_R210_C1;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r06c3;
+                <td width="54" align="center">
+                    @CAP2_R210_C2;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r06c4;
+                <td width="54" align="center">
+                    @CAP2_R210_C3;
+                </td>
+                <td width="54" align="center">
+                    @CAP2_R210_C4;
                 </td>
 
             </tr>
             <tr>
-                <td width="189">
-                    <p>
-                        ["Lemn şi produse din lemn şi plută (cu excepţia mobilierului); articole din paie şi materiale
-                        de împletit; celuloză, hîrtie şi produse din hîrtie; materiale tipărite şi pe medii de stocare"]
-                    </p>
-                </td>
                 <td width="45">
                     <p align="center">
-                        07
+                     211
                     </p>
                 </td>
-                <td width="66">
-                    @dec_table3_row_r07c1;
+                <td width="189">
+                    <p>
+                        ["Născuți viței, purcei, miei, iezi, puișori (capete)"]
+                    </p>
                 </td>
-                <td width="54">
-                    @dec_table3_row_r07c2;
+                <td width="66" align="center" >
+                    @CAP2_R211_C1;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r07c3;
+                <td width="54" align="center">
+                    @CAP2_R211_C2;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r07c4;
+                <td width="54" align="center">
+                     @CAP2_R211_C3;
+                </td>
+                <td width="54" align="center">
+                    @CAP2_R211_C4;
                 </td>
 
             </tr>
             <tr>
-                <td width="189">
-                    <p>
-                        ["Cocs şi produse petroliere rafinate"]
-                    </p>
-                </td>
                 <td width="45">
                     <p align="center">
-                        08
+                     212 
                     </p>
                 </td>
-                <td width="66">
-                    @dec_table3_row_r08c1;
+                <td width="189">
+                    <p>
+                        ["Animale de toate vîrstele moarte si pierite, inclusiv animale tinere născute in anul curent (capete)"]
+                    </p>
                 </td>
-                <td width="54">
-                    @dec_table3_row_r08c2;
+                <td width="66" align="center">
+                    @CAP2_R212_C1;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r08c3;
+                <td width="54" align="center">
+                    @CAP2_R212_C2;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r08c4;
+                <td width="54" align="center">
+                   @CAP2_R212_C3;
+                </td>
+                <td width="54" align="center">
+                    @CAP2_R212_C4;
                 </td>
 
             </tr>
             <tr>
-                <td width="189">
-                    <p>
-                        ["Chimicale, produse chimice şi fibre sintetice şi artificiale; produse din mase plastice şi din
-                        cauciuc; combustibil nuclear"]
-                    </p>
-                </td>
                 <td width="45">
                     <p align="center">
-                        09
+                       213 
                     </p>
                 </td>
-                <td width="66">
-                    @dec_table3_row_r09c1;
+                <td width="189">
+                    <p>
+                        ["Cumpărari, primiri si alte intrari (capete)"]
+                    </p>
                 </td>
-                <td width="54">
-                    @dec_table3_row_r09c2;
+                <td width="66" align="center">
+                    @CAP2_R213_C1;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r09c3;
+                <td width="54" align="center">
+                    @CAP2_R213_C2;
                 </td>
-                <td width="54">
-                    @dec_table3_row_r09c4;
+                <td width="54" align="center">
+                    @CAP2_R213_C3;
+                </td>
+                <td width="54" align="center">
+                    @CAP2_R213_C4;
                 </td>
 
             </tr>
-            <tr>
-                <td width="189">
-                    <p>
-                        ["Alte produse minerale nemetalice"]
-                    </p>
-                </td>
-                <td width="45">
-                    <p align="center">
-                        10
-                    </p>
-                </td>
-                <td width="66">
-                    @dec_table3_row_r10c1;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r10c2;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r10c3;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r10c4;
-                </td>
-
-            </tr>
-            <tr>
-                <td width="189">
-                    <p>
-                        ["Metale de bază; produse metalice fabricate, cu excepţia maşinilor şi a echipamentelor"]
-                    </p>
-                </td>
-                <td width="45">
-                    <p align="center">
-                        11
-                    </p>
-                </td>
-                <td width="66">
-                    @dec_table3_row_r11c1;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r11c2;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r11c3;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r11c4;
-                </td>
-
-            </tr>
-            <tr>
-                <td width="189">
-                    <p>
-                        ["Maşini şi echipamente neclasificate anterior; maşini şi aparatură de calcul pentru birou;
-                        maşini şi aparate electrice neclasificate anterior; echipamente şi aparate radio, TV şi de
-                        comunicaţii; instrumente medicale, optice şi de precizie; ceasuri şi
-                        ceasornice"]
-                    </p>
-                </td>
-                <td width="45">
-                    <p align="center">
-                        12
-                    </p>
-                </td>
-                <td width="66">
-                    @dec_table3_row_r12c1;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r12c2;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r12c3;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r12c4;
-                </td>
-
-            </tr>
-            <tr>
-                <td width="189">
-                    <p>
-                        ["Echipamente de transport"]
-                    </p>
-                </td>
-                <td width="45">
-                    <p align="center">
-                        13
-                    </p>
-                </td>
-                <td width="66">
-                    @dec_table3_row_r13c1;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r13c2;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r13c3;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r13c4;
-                </td>
-
-            </tr>
-            <tr>
-                <td width="189">
-                    <p>
-                        ["Mobilier; alte mărfuri manufacturate neclasificate anterior"]
-                    </p>
-                </td>
-                <td width="45">
-                    <p align="center">
-                        14
-                    </p>
-                </td>
-                <td width="66">
-                    @dec_table3_row_r14c1;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r14c2;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r14c3;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r14c4;
-                </td>
-
-            </tr>
-            <tr>
-                <td width="189">
-                    <p>
-                        ["Materii prime secundare; deşeuri urbane şi alte deşeuri"]
-                    </p>
-                </td>
-                <td width="45">
-                    <p align="center">
-                        15
-                    </p>
-                </td>
-                <td width="66">
-                    @dec_table3_row_r15c1;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r15c2;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r15c3;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r15c4;
-                </td>
-
-            </tr>
-            <tr>
-                <td width="189">
-                    <p>
-                        ["Poştă, colete"]
-                    </p>
-                </td>
-                <td width="45">
-                    <p align="center">
-                        16
-                    </p>
-                </td>
-                <td width="66">
-                    @dec_table3_row_r16c1;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r16c2;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r16c3;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r16c4;
-                </td>
-
-            </tr>
-            <tr>
-                <td width="189">
-                    <p>
-                        ["Echipamente şi materiale utilizate în transportul de mărfuri"]
-                    </p>
-                </td>
-                <td width="45">
-                    <p align="center">
-                        17
-                    </p>
-                </td>
-                <td width="66">
-                    @dec_table3_row_r17c1;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r17c2;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r17c3;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r17c4;
-                </td>
-
-            </tr>
-            <tr>
-                <td width="189">
-                    <p>
-                        ["Mărfuri mutate în cursul mutării de gospodării sau birouri; bagaje transportate separat de
-                        pasageri; automobile mutate în scopul reparaţiilor, alte mărfuri necomerciale neclasificate
-                        anterior"]
-                    </p>
-                </td>
-                <td width="45">
-                    <p align="center">
-                        18
-                    </p>
-                </td>
-                <td width="66">
-                    @dec_table3_row_r18c1;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r18c2;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r18c3;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r18c4;
-                </td>
-
-            </tr>
-            <tr>
-                <td width="189">
-                    <p>
-                        ["Mărfuri grupate: un amestec de tipuri de mărfuri care sunt transportate împreună"]
-                    </p>
-                </td>
-                <td width="45">
-                    <p align="center">
-                        19
-                    </p>
-                </td>
-                <td width="66">
-                    @dec_table3_row_r19c1;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r19c2;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r19c3;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r19c4;
-                </td>
-
-            </tr>
-            <tr>
-                <td width="189">
-                    <p>
-                        ["Mărfuri neidentificabile: mărfuri care nu pot fi identificate dintr-un motiv sau altul şi
-                        care, prin urmare, nu pot fi clasificate în grupele 01-16."]
-                    </p>
-                </td>
-                <td width="45">
-                    <p align="center">
-                        20
-                    </p>
-                </td>
-                <td width="66">
-                    @dec_table3_row_r20c1;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r20c2;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r20c3;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r20c4;
-                </td>
-
-            </tr>
-            <tr>
-                <td width="189">
-                    <p>
-                        ["Alte mărfuri neclasificate anterior"]
-                    </p>
-                </td>
-                <td width="45">
-                    <p align="center">
-                        21
-                    </p>
-                </td>
-                <td width="66">
-                    @dec_table3_row_r21c1;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r21c2;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r21c3;
-                </td>
-                <td width="54">
-                    @dec_table3_row_r21c4;
-                </td>
-
-            </tr>
+   
         </tbody>
     </table>
 </div>
