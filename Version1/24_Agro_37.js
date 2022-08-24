@@ -183,13 +183,25 @@ webform.validators.agro24 = function (v, allowOverpass) {
 //Start 33-002
 
     for (var i = 2; i <= 3; i++) {
-        var R140_C = Number(values["CAP2_R140_C" + i]); 
-        var R150_C = Number(values["CAP2_R150_C" + i]);
+        
+        if (!isNaN(Number(values["CAP2_R140_C" + i]))) {
+            var R140_C = Number(values["CAP2_R140_C" + i]);
+        }
+
+
+         if (!isNaN(Number(values["CAP2_R150_C" + i]))) {
+            var R150_C = Number(values["CAP2_R150_C" + i]);
+        }
+
+
+       
+
+
         if (R140_C < R150_C) {
             webform.errors.push({
                 'fieldName': 'CAP2_R140_C' + i,
                 'weight': 14,
-                'msg': Drupal.t('Cod eroare: 33-002. Cap.II, Rind.140 COL(2,3) >= Rind.150 pe coloana.@col', { '@col': i })
+                'msg': Drupal.t('Cod eroare: 32-002. Cap.II, Rind.140 COL(2,3) >= Rind.150  - ( @R140_C <  @R150_C)', { '@R140_C': R140_C, '@R150_C': R150_C })
             });
         }
     }
