@@ -211,23 +211,29 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 // Start 32-010
 
-    var col1 = Number(values.CAP1_R050_C1);
-    var col2 = Number(values.CAP1_R110_C1);
+    if (!isNaN(Number(values.CAP1_R050_C1))){
+   var R050_C1 = Number(values.CAP1_R050_C1);}
+    
+    if (!isNaN(Number(values.CAP1_R110_C1))){
+        var R110_C1 = Number(values.CAP1_R110_C1);}
 
-    if ((col1 != 0 && col2 == 0)) {
+    if ((R050_C1 != 0 && R110_C1 == 0)) {
         webform.errors.push({
             'fieldName': 'CAP1_R110_C1',
             'weight': 1,
-            'msg': Drupal.t('Cod eroare: 32-017 Cap.I, Daca Rind.050 COL1 <> 0, atunci Rind.110 COL1 <> 0 ')
+        
+            'msg': Drupal.t('Cod eroare: 32-017. Cap.I, Daca Rind.050 COL1 <> 0, atunci Rind.110 COL1 <> 0 - ( @R050_C1 , @R110_C1)', { '@R050_C1': R050_C1, '@R110_C1': R110_C1 })
         });
     }
     else 
 
-        if ((col1 == 0 && col2 != 0)) {
+        if ((R050_C1 == 0 && R110_C1 != 0)) {
             webform.errors.push({
                 'fieldName': 'CAP1_R050_C1',
                 'weight': 1,
-                'msg': Drupal.t('Cod eroare: 32-017 Cap.I, Daca Rind.050 COL1 <> 0, atunci Rind.110 COL1 <> 0 ')
+              
+                'msg': Drupal.t('Cod eroare: 32-017. Cap.I, Daca Rind.110 COL1 <> 0, atunci Rind.050 COL1 <> 0 - ( @R110_C1, @R050_C1)', { '@R050_C1': R050_C1, '@R110_C1': R110_C1 })
+                
             });
         }
 
