@@ -121,13 +121,24 @@ webform.validators.agro24 = function (v, allowOverpass) {
     //Start 32-005
 
     for (var i = 1; i <= 4; i++) {
-        var R200_C = Number(values["CAP2_R200_C" + i]);
-        var R212_C = Number(values["CAP2_R212_C" + i]);
+
+        if (!isNaN(Number(values["CAP2_R200_C" + i]))) {
+            var R200_C = Number(values["CAP2_R200_C" + i]);
+        }
+         
+
+        if (!isNaN(Number(values["CAP2_R212_C" + i]))) {
+            var R212_C = Number(values["CAP2_R212_C" + i]);
+        }
+
+       
+
+
         if ((R200_C != 0 && R212_C == 0)) {
             webform.errors.push({
                 'fieldName': 'CAP2_R212_C' + i,
                 'weight': 16,
-                'msg': Drupal.t('Cod eroare: 32-005. Cap.II, Daca Rind.200 COL(1,2,3,4) <> 0, atunci Rind.212 COL(1,2,3,4) <> 0 pe coloana  @col', { '@col': i })
+               'msg': Drupal.t('Cod eroare: c. Cap.II, Daca Rind.200 COL(1,2,3,4) <> 0, atunci Rind.212 COL(1,2,3,4) <> 0  - ( @R200_C, @R212_C)', { '@R200_C': R200_C, '@R212_C': R212_C })
             });
         }
     }
