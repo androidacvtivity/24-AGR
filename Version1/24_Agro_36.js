@@ -138,7 +138,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
             webform.errors.push({
                 'fieldName': 'CAP2_R212_C' + i,
                 'weight': 16,
-               'msg': Drupal.t('Cod eroare: c. Cap.II, Daca Rind.200 COL(1,2,3,4) <> 0, atunci Rind.212 COL(1,2,3,4) <> 0  - ( @R200_C, @R212_C)', { '@R200_C': R200_C, '@R212_C': R212_C })
+               'msg': Drupal.t('Cod eroare: 32-005. Cap.II, Daca Rind.200 COL(1,2,3,4) <> 0, atunci Rind.212 COL(1,2,3,4) <> 0  - ( @R200_C, @R212_C)', { '@R200_C': R200_C, '@R212_C': R212_C })
             });
         }
     }
@@ -152,13 +152,26 @@ webform.validators.agro24 = function (v, allowOverpass) {
     //Start 32-004
 
     for (var i = 1; i <= 4; i++) {
-        var R211_C = Number(values["CAP2_R211_C" + i]);
-        var R130_C = Number(values["CAP2_R130_C" + i]);
+
+        if (!isNaN(Number(values["CAP2_R211_C" + i]))) {
+            var R211_C = Number(values["CAP2_R211_C" + i]);
+        }
+
+
+
+
+        if (!isNaN(Number(values["CAP2_R130_C" + i]))) {
+            var R130_C = Number(values["CAP2_R130_C" + i]);
+        }
+
+
+
         if ((R211_C != 0 && R130_C == 0)) {
             webform.errors.push({
                 'fieldName': 'CAP2_R130_C' + i,
                 'weight': 15,
-                'msg': Drupal.t('Cod eroare: 32-004. Cap.II, Daca Rind.211 COL(1,2,3,4) <> 0, atunci Rind.130 COL(1,2,3,4) <> 0 pe coloana  @col', { '@col': i })
+              
+                'msg': Drupal.t('Cod eroare: 32-004. Cap.II, Daca Rind.211 COL(1,2,3,4) <> 0, atunci Rind.130 COL(1,2,3,4) <> 0  - ( @R211_C, @R130_C)', { '@R211_C': R211_C, '@R130_C': R130_C })
             });
         }
     }
