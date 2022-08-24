@@ -29,16 +29,30 @@ webform.validators.agro24 = function (v, allowOverpass) {
     //Start 32-003
 
     for (var i = 1; i <= 4; i++) {
-        var R210_C = Number(values["CAP2_R210_C" + i]);
+
+        if (!isNaN(Number(values["CAP2_R210_C" + i]))){
+        var R210_C = Number(values["CAP2_R210_C" + i]);}
+
+
+        if (!isNaN(Decimal(values["CAP2_R130_C" + i] || 0)
+            .plus(values["CAP2_R140_C" + i] || 0))){
+
         var R130_140 = Decimal(values["CAP2_R130_C" + i] || 0)
-            .plus(values["CAP2_R140_C" + i] || 0)
-        var R200_C = Number(values["CAP2_R200_C" + i]);    
+            .plus(values["CAP2_R140_C" + i] || 0)}
+
+
+        if (!isNaN(Number(values["CAP2_R200_C" + i]))){ 
+
+        var R200_C = Number(values["CAP2_R200_C" + i]);}    
+
+        var result_33_003 = R130_140 - R200_C
+ 
    
-        if ((R210_C != R130_140 - R200_C )) {
+        if ((R210_C != result_33_003 )) {
             webform.errors.push({
                 'fieldName': 'CAP2_R210_C' + i,
                 'weight': 19,
-                'msg': Drupal.t('Cod eroare: 33-003. Cap.II, Rind.210 COL(1,2,3,4) = Rind.(130+140-200) COL(1,2,3,4) pe coloana  @col', { '@col': i })
+                'msg': Drupal.t('Cod eroare: 33-003. Cap.II, Rind.210 COL(1,2,3,4) = Rind.(130+140-200) COL(1,2,3,4), @R210_C <> @result_33_003 ', { '@col': i, '@R210_C': R210_C, '@result_33_003': result_33_003 })
             });
         }
     }
