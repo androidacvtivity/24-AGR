@@ -379,18 +379,33 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
     // Start 33-009
 
-    var R270_C1 = Number(values.CAP3_R270_C1);
-    var R271_C1 = Number(values.CAP3_R271_C1);
-    var R273_C1 = Number(values.CAP3_R273_C1);
-    var R274_C1 = Number(values.CAP3_R274_C1);
-    var R275_C1 = Number(values.CAP3_R275_C1);
-    var R276_C1 = Number(values.CAP3_R276_C1);
+    
+    if (!isNaN(Number(values.CAP3_R270_C1))){
+    var R270_C1 = Number(values.CAP3_R270_C1); }
 
-    if ((R270_C1 < R271_C1 + R273_C1 + R274_C1 + R275_C1 + R276_C1)) {
+    if (!isNaN(Number(values.CAP3_R271_C1))) {
+    var R271_C1 = Number(values.CAP3_R271_C1);}
+
+    if (!isNaN(Number(values.CAP3_R273_C1))) {
+    var R273_C1 = Number(values.CAP3_R273_C1);}
+
+    if (!isNaN(Number(values.CAP3_R274_C1))) {
+    var R274_C1 = Number(values.CAP3_R274_C1);}
+
+    if (!isNaN(Number(values.CAP3_R275_C1))) {
+    var R275_C1 = Number(values.CAP3_R275_C1);}
+
+    if (!isNaN(Number(values.CAP3_R276_C1))) {
+    var R276_C1 = Number(values.CAP3_R276_C1);}
+
+    var SUM_33_009 = R271_C1 + R273_C1 + R274_C1 + R275_C1 + R276_C1
+
+
+    if ((R270_C1 < SUM_33_009)) {
         webform.errors.push({
             'fieldName': 'CAP3_R270_C1',
             'weight': 8,
-            'msg': Drupal.t('Cod eroare: 33-009 CAP.III RIND.270 COL1 >= (Rind.271 + Rind.273+Rind.274+Rind.275+Rind.276) COL1 ')
+            'msg': Drupal.t('Cod eroare: 33-009 CAP.III RIND.270 COL1 >= (Rind.271 + Rind.273+Rind.274+Rind.275+Rind.276) COL1 ( @R270_C1 <   @SUM_33_009)', { '@R270_C1': R270_C1, '@SUM_33_009': SUM_33_009 })
         });
     }
 // End  33-009
