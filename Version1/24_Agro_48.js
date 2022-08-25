@@ -415,15 +415,17 @@ webform.validators.agro24 = function (v, allowOverpass) {
    
 // Start 33-011
 
-    var R250_C1 = Number(values.CAP3_R250_C1);
+    if (!isNaN(Number(values.CAP3_R250_C1))) {
+    var R250_C1 = Number(values.CAP3_R250_C1);}
     
-    var R251_C1 = Number(values.CAP3_R251_C1);
+    if (!isNaN(Number(values.CAP3_R251_C1))) {
+    var R251_C1 = Number(values.CAP3_R251_C1);}
 
     if ((R250_C1 < R251_C1)) {
         webform.errors.push({
             'fieldName': 'CAP3_R250_C1',
             'weight': 9,
-            'msg': Drupal.t('Cod eroare: 33-011 CAP.III RIND.250 COL1 >= Rind.251 COL1 ')
+            'msg': Drupal.t('Cod eroare: 33-011 CAP.III RIND.250 COL1 >= Rind.251 COL1 ( @R250_C1 <   @R251_C1)', { '@R250_C1': R250_C1, '@R251_C1': R251_C1 })
         });
     }
 // End  33-011
