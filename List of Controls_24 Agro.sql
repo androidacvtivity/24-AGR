@@ -68,30 +68,14 @@ SELECT
          ORDER BY 
           B.CONTROL ) L
           
---          WHERE 
---          1=1
---          AND L.FORMULA LIKE '%=%'
+
           ) L
           
---            WHERE 
---         1=1
---L.CONTROL   NOT IN ('32-017','33-018','32-019','32-020','32-010','33-001','33-008','33-009',
---'33-011',
---'33-012',
---'33-013',
---'33-014',
---'33-015',
---'33-016'
---)
-
---L.CONTROL    IN ('45-015')
 
 
 
---          
---         AND  L.FORMULA  NOT LIKE '%>=%'
---          AND 
---          L.FORMULA  NOT LIKE '%=>%'
+
+
 
 ORDER BY 
  L.CONTROL
