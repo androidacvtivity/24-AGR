@@ -350,15 +350,27 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
     // Start 33-008
 
-    var col1 = Number(values.CAP3_R230_C1);
-    var col2 = Number(values.CAP3_R240_C1);
-    var col3 = Number(values.CAP3_R241_C1);
 
-    if ((col1 < col2 + col3)) {
+    if (!isNaN(Number(values.CAP3_R230_C1))) {
+        var R230_C1 = Number(values.CAP3_R230_C1);
+    }
+
+    if (!isNaN(Number(values.CAP3_R240_C1))) {
+        var R240_C1 = Number(values.CAP3_R240_C1);
+    }
+
+
+
+    if (!isNaN(Number(values.CAP3_R241_C1))) {
+        var R241_C1 = Number(values.CAP3_R241_C1);
+    }
+    var SUM_33_008 = R240_C1 + R241_C1
+
+    if ((R230_C1 < SUM_33_008)) {
         webform.errors.push({
             'fieldName': 'CAP3_R230_C1',
             'weight': 7,
-            'msg': Drupal.t('Cod eroare: 33-008 CAP.III RIND.230 COL1 >= (Rind.240 + Rind.241) COL1 ')
+            'msg': Drupal.t('Cod eroare: 33-008 CAP.III RIND.230 COL1 >= (Rind.240 + Rind.241) COL1 ( @R230_C1 <   @SUM_33_008)', { '@R230_C1': R230_C1, '@SUM_33_008': SUM_33_008 })
         });
     }
 // End  33-008
