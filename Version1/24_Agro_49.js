@@ -435,14 +435,29 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 // Start 33-012
 
-    var R260_C1 = Number(values.CAP3_R260_C1);
-    var R261_C1 = Number(values.CAP3_R261_C1);
+
+
+
+
+    if (!isNaN(Number(values.CAP3_R260_C1))) {
+        var R260_C1 = Number(values.CAP3_R260_C1);
+    }
+
+
+   
+
+    if (!isNaN(Number(values.CAP3_R261_C1))) {
+        var R261_C1 = Number(values.CAP3_R261_C1);
+    }
+
+
+
 
     if ((R260_C1 < R261_C1)) {
         webform.errors.push({
             'fieldName': 'CAP3_R260_C1',
             'weight': 10,
-            'msg': Drupal.t('Cod eroare: 33-012 CAP.III RIND.260 COL1 >= Rind.261 COL1 ')
+            'msg': Drupal.t('Cod eroare: 33-012 CAP.III RIND.260 COL1 >= Rind.261 COL1 ( @R260_C1 <   @R261_C1)', { '@R260_C1': R260_C1, '@R261_C1': R261_C1 })
         });
     }
 // End  33-012
