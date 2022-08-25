@@ -243,24 +243,27 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 // Start 33-018
 
+    if (!isNaN(Number(values.CAP1_R020_C1))){
+        var R020_C1 = Number(values.CAP1_R020_C1);}
 
-    var col1 = Number(values.CAP1_R020_C1);
-    var col2 = Number(values.CAP1_R100_C1);
+    if (!isNaN(Number(values.CAP1_R100_C1))) {
+        var R100_C1 = Number(values.CAP1_R100_C1);
+    }
 
-    if ((col1 != 0 && col2 == 0)) {
+    if ((R020_C1 != 0 && R100_C1 == 0)) {
         webform.errors.push({
             'fieldName': 'CAP1_R100_C1',
             'weight': 2,
-            'msg': Drupal.t('Cod eroare: 33-018 Cap.I, Daca Rind.020 COL1 <> 0, atunci Rind.100 COL1 <> 0 ')
+            'msg': Drupal.t('Cod eroare: 33-018 Cap.I, Daca Rind.020 COL1 <> 0, atunci Rind.100 COL1 <> 0 - ( @R020_C1, @R100_C1)', { '@R020_C1': R020_C1, '@R100_C1': R100_C1 })
         });
     }
     else
 
-        if ((col1 == 0 && col2 != 0)) {
+        if ((R020_C1 == 0 && R100_C1 != 0)) {
             webform.errors.push({
                 'fieldName': 'CAP1_R020_C1',
                 'weight': 2,
-                'msg': Drupal.t('Cod eroare: 33-018 Cap.I, Daca Rind.020 COL1 <> 0, atunci Rind.100 COL1 <> 0 ')
+                'msg': Drupal.t('Cod eroare: 33-018 Cap.I, Daca Rind.100 COL1 <> 0, atunci Rind.020 COL1 <> 0 ( @R100_C1,  @R020_C1)', { '@R020_C1': R020_C1, '@R100_C1': R100_C1 })
             });
         }
 
@@ -268,28 +271,41 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 // Start 32-019
 
-    var col1 = Number(values.CAP3_R272_C1);
-    var col2 = Number(values.CAP1_R110_C1);
+    if (!isNaN(Number(values.CAP3_R272_C1))){
+    var R272_C1 = Number(values.CAP3_R272_C1);}
 
-    if ((col1 != 0 && col2 == 0)) {
+
+    if (Number(values.CAP1_R110_C1))    
+        var R110_C1 = Number(values.CAP1_R110_C1);
+
+    if ((R272_C1 != 0 && R110_C1 == 0)) {
         webform.errors.push({
             'fieldName': 'CAP1_R110_C1',
             'weight': 3,
-            'msg': Drupal.t('Cod eroare: 32-019 Cap.III, Daca Rind.272 COL1 <> 0, atunci CAP.I Rind.110 COL1 <> 0 ')
+            'msg': Drupal.t('Cod eroare: 32-019 Cap.III, Daca Rind.272 COL1 <> 0, atunci CAP.I Rind.110 COL1 <> 0 ( @R272_C1,  @R110_C1)', { '@R272_C1': R272_C1, '@R110_C1': R110_C1 })
         });
     }
 // End  32-019
 
+
+
     // Start 32-020
 
-    var col1 = Number(values.CAP3_R240_C1);
-    var col2 = Number(values.CAP1_R100_C1);
+    if (!isNaN(Number(values.CAP3_R240_C1))){
+    var R240_C1 = Number(values.CAP3_R240_C1);}
 
-    if ((col1 != 0 && col2 == 0)) {
+
+    if (!isNaN(Number(values.CAP1_R100_C1))) {
+        var R100_C1 = Number(values.CAP1_R100_C1);
+    }
+
+  
+
+    if ((R240_C1 != 0 && R100_C1 == 0)) {
         webform.errors.push({
-            'fieldName': 'CAP1_R110_C1',
+            'fieldName': 'CAP1_R100_C1',
             'weight': 4,
-            'msg': Drupal.t('Cod eroare: 32-020 Cap.III, Daca Rind.240 COL1 <> 0, atunci CAP.I Rind.100 COL1 <> 0 ')
+            'msg': Drupal.t('Cod eroare: 32-020 Cap.III, Daca Rind.240 COL1 <> 0, atunci CAP.I Rind.100 COL1 <> 0 ( @R240_C1,  @R100_C1)', { '@R240_C1': R240_C1, '@R100_C1': R100_C1 })
         });
     }
 // End  32-020
@@ -297,14 +313,17 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
     // Start 32-010
 
-    var col1 = Number(values.CAP3_R271_C1);
-    var col2 = Number(values.CAP3_R272_C1);
+    if (!isNaN(Number(values.CAP3_R271_C1))){
+    var R271_C1 = Number(values.CAP3_R271_C1);}
 
-    if ((col1 < col2 )) {
+    if (!isNaN(Number(values.CAP3_R272_C1))) {
+    var R272_C1 = Number(values.CAP3_R272_C1);}
+
+    if ((R271_C1 < R272_C1 )) {
         webform.errors.push({
             'fieldName': 'CAP3_R270_C1',
             'weight': 5,
-            'msg': Drupal.t('Cod eroare: 32-010 CAP.III RIND.271 COL1 >= Rind.272 COL1 ')
+            'msg': Drupal.t('Cod eroare: 32-010 CAP.III RIND.271 COL1 >= Rind.272 COL1  ( @R271_C1 <   @R272_C1)', { '@R271_C1': R271_C1, '@R272_C1': R272_C1 })
         });
     }
 // End  33-0020
@@ -366,6 +385,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 // Start 33-011
 
     var R250_C1 = Number(values.CAP3_R250_C1);
+    
     var R251_C1 = Number(values.CAP3_R251_C1);
 
     if ((R250_C1 < R251_C1)) {
