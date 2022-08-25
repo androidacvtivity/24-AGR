@@ -323,7 +323,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
         webform.errors.push({
             'fieldName': 'CAP3_R270_C1',
             'weight': 5,
-            'msg': Drupal.t('Cod eroare: 32-010 CAP.III RIND.271 COL1 >= Rind.272 COL1  ( @R271_C1 <   @R272_C1)', { '@R271_C1': R271_C1, '@R272_C1': R272_C1 })
+            'msg': Drupal.t('Cod eroare: 32-010 CAP.III RIND.271 COL1 >= Rind.272 COL1  ( @R271_C1 < @R272_C1)', { '@R271_C1': R271_C1, '@R272_C1': R272_C1 })
         });
     }
 // End  33-0020
@@ -340,7 +340,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
         webform.errors.push({
             'fieldName': 'CAP1_R045_C1',
             'weight': 6,
-            'msg': Drupal.t('Cod eroare: 33-001 Cap.I, Rind.045 COL1 >= Rind.050 COL1  ( @R045_C1 <   @R050_C1)', { '@R045_C1': R045_C1, '@R050_C1': R050_C1 })
+            'msg': Drupal.t('Cod eroare: 33-001 Cap.I, Rind.045 COL1 >= Rind.050 COL1  ( @R045_C1 < @R050_C1)', { '@R045_C1': R045_C1, '@R050_C1': R050_C1 })
            
         });
     }
@@ -370,7 +370,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
         webform.errors.push({
             'fieldName': 'CAP3_R230_C1',
             'weight': 7,
-            'msg': Drupal.t('Cod eroare: 33-008 CAP.III RIND.230 COL1 >= (Rind.240 + Rind.241) COL1 ( @R230_C1 <   @SUM_33_008)', { '@R230_C1': R230_C1, '@SUM_33_008': SUM_33_008 })
+            'msg': Drupal.t('Cod eroare: 33-008 CAP.III RIND.230 COL1 >= (Rind.240 + Rind.241) COL1 ( @R230_C1 < @SUM_33_008)', { '@R230_C1': R230_C1, '@SUM_33_008': SUM_33_008 })
         });
     }
 // End  33-008
@@ -405,7 +405,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
         webform.errors.push({
             'fieldName': 'CAP3_R270_C1',
             'weight': 8,
-            'msg': Drupal.t('Cod eroare: 33-009 CAP.III RIND.270 COL1 >= (Rind.271 + Rind.273+Rind.274+Rind.275+Rind.276) COL1 ( @R270_C1 <   @SUM_33_009)', { '@R270_C1': R270_C1, '@SUM_33_009': SUM_33_009 })
+            'msg': Drupal.t('Cod eroare: 33-009 CAP.III RIND.270 COL1 >= (Rind.271 + Rind.273+Rind.274+Rind.275+Rind.276) COL1 ( @R270_C1 < @SUM_33_009)', { '@R270_C1': R270_C1, '@SUM_33_009': SUM_33_009 })
         });
     }
 // End  33-009
@@ -425,7 +425,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
         webform.errors.push({
             'fieldName': 'CAP3_R250_C1',
             'weight': 9,
-            'msg': Drupal.t('Cod eroare: 33-011 CAP.III RIND.250 COL1 >= Rind.251 COL1 ( @R250_C1 <   @R251_C1)', { '@R250_C1': R250_C1, '@R251_C1': R251_C1 })
+            'msg': Drupal.t('Cod eroare: 33-011 CAP.III RIND.250 COL1 >= Rind.251 COL1 ( @R250_C1 < @R251_C1)', { '@R250_C1': R250_C1, '@R251_C1': R251_C1 })
         });
     }
 // End  33-011
@@ -457,7 +457,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
         webform.errors.push({
             'fieldName': 'CAP3_R260_C1',
             'weight': 10,
-            'msg': Drupal.t('Cod eroare: 33-012 CAP.III RIND.260 COL1 >= Rind.261 COL1 ( @R260_C1 <   @R261_C1)', { '@R260_C1': R260_C1, '@R261_C1': R261_C1 })
+            'msg': Drupal.t('Cod eroare: 33-012 CAP.III RIND.260 COL1 >= Rind.261 COL1 ( @R260_C1 < @R261_C1)', { '@R260_C1': R260_C1, '@R261_C1': R261_C1 })
         });
     }
 // End  33-012
@@ -465,30 +465,33 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 
     // Start 33-013
+    if (!isNaN(Number(values.CAP3_R230_C1))) {
+    var R230_C1 = Number(values.CAP3_R230_C1);}
 
-    var R230_C1 = Number(values.CAP3_R230_C1);
-    var R240_C1 = Number(values.CAP3_R240_C1);
+    if (!isNaN(Number(values.CAP3_R240_C1))) {
+    var R240_C1 = Number(values.CAP3_R240_C1);}
 
     if ((R230_C1 < R240_C1)) {
         webform.errors.push({
             'fieldName': 'CAP3_R230_C1',
             'weight': 11,
-            'msg': Drupal.t('Cod eroare: 33-013 CAP.III RIND.230 COL1 >= Rind.240 COL1 ')
+            'msg': Drupal.t('Cod eroare: 33-013 CAP.III RIND.230 COL1 >= Rind.240 COL1 ( @R230_C1 < @R240_C1)', { '@R230_C1': R230_C1, '@R240_C1': R240_C1 })
         });
     }
 // End  33-013
 
 
 // Start 33-014
-
-    var R230_C1 = Number(values.CAP3_R230_C1);
-    var R241_C1 = Number(values.CAP3_R241_C1);
+    if (!isNaN(Number(values.CAP3_R230_C1))) {
+    var R230_C1 = Number(values.CAP3_R230_C1);}
+    if (!isNaN(Number(values.CAP3_R241_C1))) {
+    var R241_C1 = Number(values.CAP3_R241_C1);}
 
     if ((R230_C1 < R241_C1)) {
         webform.errors.push({
             'fieldName': 'CAP3_R230_C1',
             'weight': 12,
-            'msg': Drupal.t('Cod eroare: 33-014 CAP.III RIND.230 COL1 >= Rind.241 COL1 ')
+            'msg': Drupal.t('Cod eroare: 33-014 CAP.III RIND.230 COL1 >= Rind.241 COL1 ( @R230_C1 < @R241_C1)', { '@R230_C1': R230_C1, '@R241_C1': R241_C1 })
         });
     }
 // End  33-014
