@@ -26,7 +26,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
     var values = Drupal.settings.mywebform.values;
 
 
-    //Start 32-003
+    //Start 32-003 //1
 
     for (var i = 1; i <= 4; i++) {
 
@@ -60,7 +60,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 //End 32-003
 
-    //Start 33-007
+    //Start 33-007 // 12 
 
     for (var i = 1; i <= 3; i++) {
         
@@ -87,7 +87,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 //End 33-007
 
 
-    //Start 32-006
+    //Start 32-006 //4 
 
     for (var i = 1; i <= 4; i++) {
 
@@ -118,7 +118,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 
 
-    //Start 32-005
+    //Start 32-005 //3 
 
     for (var i = 1; i <= 4; i++) {
 
@@ -149,7 +149,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 
 
-    //Start 32-004
+    //Start 32-004 //2
 
     for (var i = 1; i <= 4; i++) {
 
@@ -180,7 +180,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 //End 32-004
 
 
-//Start 33-002
+//Start 33-002 //11
 
     for (var i = 2; i <= 3; i++) {
         
@@ -209,7 +209,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 //End 33-002
 
-// Start 32-010
+// Start 32-017 //6 
 
     if (!isNaN(Number(values.CAP1_R050_C1))){
    var R050_C1 = Number(values.CAP1_R050_C1);}
@@ -237,7 +237,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
             });
         }
 
-// End  32-010
+// End  32-017
 
 
 
@@ -269,7 +269,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 // End  33-018
 
-// Start 32-019
+// Start 32-019 // 7
 
     if (!isNaN(Number(values.CAP3_R272_C1))){
     var R272_C1 = Number(values.CAP3_R272_C1);}
@@ -289,7 +289,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 
 
-    // Start 32-020
+    // Start 32-020 //8 
 
     if (!isNaN(Number(values.CAP3_R240_C1))){
     var R240_C1 = Number(values.CAP3_R240_C1);}
@@ -326,9 +326,9 @@ webform.validators.agro24 = function (v, allowOverpass) {
             'msg': Drupal.t('Cod eroare: 32-010 CAP.III RIND.271 COL1 >= Rind.272 COL1  ( @R271_C1 < @R272_C1)', { '@R271_C1': R271_C1, '@R272_C1': R272_C1 })
         });
     }
-// End  33-0020
+// End  33-010
 
-    // Start 33-001
+    // Start 33-001 //10
 
     if (!isNaN(Number(values.CAP1_R045_C1))){
         var R045_C1 = Number(values.CAP1_R045_C1);}
@@ -348,7 +348,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 
 
-    // Start 33-008
+    // Start 33-008 /  13 
 
 
     if (!isNaN(Number(values.CAP3_R230_C1))) {
@@ -377,7 +377,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 
 
-    // Start 33-009
+    // Start 33-009 // 14 
 
     
     if (!isNaN(Number(values.CAP3_R270_C1))){
@@ -413,7 +413,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 
    
-// Start 33-011
+// Start 33-011 // 15
 
     if (!isNaN(Number(values.CAP3_R250_C1))) {
     var R250_C1 = Number(values.CAP3_R250_C1);}
@@ -433,7 +433,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 
 
-// Start 33-012
+// Start 33-012 //  16 
 
 
 
@@ -464,7 +464,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 
 
-    // Start 33-013
+    // Start 33-013 // 17 
     if (!isNaN(Number(values.CAP3_R230_C1))) {
     var R230_C1 = Number(values.CAP3_R230_C1);}
 
@@ -481,7 +481,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 // End  33-013
 
 
-// Start 33-014
+// Start 33-014 // 8 
     if (!isNaN(Number(values.CAP3_R230_C1))) {
     var R230_C1 = Number(values.CAP3_R230_C1);}
     if (!isNaN(Number(values.CAP3_R241_C1))) {
