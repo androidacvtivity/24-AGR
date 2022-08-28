@@ -12,7 +12,7 @@
         
         WHERE 
         
-        FORM = 45
+        FORM = 33
         AND PERIOADA = 1052 
         
         GROUP BY 
