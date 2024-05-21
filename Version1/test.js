@@ -1,94 +1,22 @@
+function validate33_002(values) {
+    // 33-002 validation logic
+    for (var i = 1; i <= 6; i++) {
+        if (i !== 2 ) {
+           
+            var CAP1_R2_C = !isNaN(Number(values["CAP1_R2_C" + i])) ? Number(values["CAP1_R2_C" + i]) : 0;
+            var CAP1_R3_C = !isNaN(Number(values["CAP1_R3_C" + i])) ? Number(values["CAP1_R_C" + i]) : 0;
 
-function validate33_001_F(values) {
+      //      Tab. 1.1 daca rd.2 Col. 1, 3, 4, 5, 6 ≠0 atunci Tab.1.1 rd.3 Col. 1, 3, 4, 5, 6 ≠0 si invers         
 
-for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
-    if (!isNaN(String(values.CAP_CUATM_FILIAL[j]))) {
-        var CAP_CUATM_FILIAL = 0;
-        CAP_CUATM_FILIAL  = String(values.CAP_CUATM_FILIAL[j]);
-    }
-
-
-   // Uncaught TypeError: values[(("CAP1_R5_C" + i) + "_FILIAL")] is undefined
-   
-    for (var i = 0; i <= 8; i++) {
-        if (!isNaN(Number(values["CAP1_R5_C" + (i) + "_FILIAL"][j]))) {
-            var R5_C = 0;
-            R5_C = Number(values["CAP1_R5_C" + (i) + "_FILIAL"][j]);
-        }
-        
-        if (!isNaN(Number(values["CAP1_R1_C" + (i) + "_FILIAL"][j]))) {
-            var R1_C = 0;
-            R1_C = Number(values["CAP1_R1_C" + (i) + "_FILIAL"][j]);
-        }
-
-
-        if (!isNaN(Number(values["CAP1_R2_C" + (i) + "_FILIAL"][j]))) {
-            var R2_C = 0;
-            R2_C = Number(values["CAP1_R2_C" + (i) + "_FILIAL"][j]);
-        }
-
-
-        if (!isNaN(Number(values["CAP1_R4_C" + (i) + "_FILIAL"][j]))) {
-            var R4_C = 0;
-            R4_C = Number(values["CAP1_R4_C" + (i) + "_FILIAL"][j]);
-        }
-
-        var result_33_001_F = R1_C + R2_C - R4_C;
-
-        if ((R5_C !== result_33_001_F)) {
-            webform.errors.push({
-                'fieldName': 'CAP1_R5_C' + (i) + '_FILIAL',
-                'index': j,
-                'weight': 19,
-                'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-001-F. [@col_FILIAL] - COL(@col_FILIAL), Rînd.(5) COL(1,3,4,5,6,8) = Rînd.(1+2-4) COL(1,3,4,5,6,8), @R5_C <> @result_33_001_F ', { '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL, '@col_FILIAL': i, '@R5_C': R5_C, '@result_33_001_F': result_33_001_F })
-            });
-        }
-    }
- }
-    
-}
-
-
-
-/////////////////////////////
-
-
-
-function validate33_001_F(values) {
-
-    for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
-        var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
-
-        for (var i = 0; i <= 8; i++) {
-            var R5_C = 0, R1_C = 0, R2_C = 0, R4_C = 0;
-
-            // Check if properties exist before accessing them
-            if (values["CAP1_R5_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP1_R5_C" + i + "_FILIAL"][j]))) {
-                R5_C = Number(values["CAP1_R5_C" + i + "_FILIAL"][j]);
-            }
-
-            if (values["CAP1_R1_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP1_R1_C" + i + "_FILIAL"][j]))) {
-                R1_C = Number(values["CAP1_R1_C" + i + "_FILIAL"][j]);
-            }
-
-            if (values["CAP1_R2_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP1_R2_C" + i + "_FILIAL"][j]))) {
-                R2_C = Number(values["CAP1_R2_C" + i + "_FILIAL"][j]);
-            }
-
-            if (values["CAP1_R4_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP1_R4_C" + i + "_FILIAL"][j]))) {
-                R4_C = Number(values["CAP1_R4_C" + i + "_FILIAL"][j]);
-            }
-
-            var result_33_001_F = R1_C + R2_C - R4_C;
-
-            if (R5_C !== result_33_001_F) {
+            if (CAP1_R2_C !== 0 && CAP1_R3_C === 0) {
                 webform.errors.push({
-                    'fieldName': 'CAP1_R5_C' + i + '_FILIAL',
-                    'index': j,
+                    'fieldName': 'CAP1_R2_C' + i,
                     'weight': 19,
-                    'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-001-F. [@col_FILIAL] - COL(@col_FILIAL), Rînd.(5) COL(1,3,4,5,6,8) = Rînd.(1+2-4) COL(1,3,4,5,6,8), @R5_C <> @result_33_001_F ', { '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL, '@col_FILIAL': i, '@R5_C': R5_C, '@result_33_001_F': result_33_001_F })
+                    'index': i,
+                    'msg': Drupal.t('Cod eroare: 33-002. [@col] - Tab.1.1, rd.2 pe COL (@col), COL(1, 3, 4, 5, 6)  ≠ 0  atunci Rînd.(3))  COL(1, 3, 4, 5, 6), @CAP1_R2_C  -  @CAP1_R3_C', { '@col': i, '@CAP1_R2_C': CAP1_R2_C, '@CAP1_R3_C': CAP1_R3_C })
                 });
             }
         }
     }
 }
+
