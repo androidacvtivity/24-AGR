@@ -194,7 +194,7 @@ function validate33_002_F(values) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
         for (var i = 0; i <= 8; i++) {
-            var R3_C = 0, R3_C = 0;
+            var R3_C = 0, R2_C = 0;
 
             // Check if properties exist before accessing them
 
