@@ -1,6 +1,8 @@
 function validate33_100_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
-        var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
+        //  var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
+
+        var CAP_CUATM_FILIAL = String(values.CAP_CUATM_FILIAL[j]);
 
         var nonZeroCount = 0, nonZeroCountR2 = 0, nonZeroCountR3 = 0, nonZeroCountR4 = 0;
 
@@ -47,7 +49,7 @@ function validate33_100_F(values) {
         }
 
         // If CAP_CUATM_FILIAL is not empty and all relevant columns are zero
-        if (CAP_CUATM_FILIAL !== "" && (nonZeroCountR5 === 0 )) {
+        if (CAP_CUATM_FILIAL !== "" && (nonZeroCount === 0)) {
             for (var i = 0; i <= 8; i++) {
                 if (i !== 2 && i !== 7 && i !== 5) {
                     webform.errors.push({
@@ -77,7 +79,7 @@ function validate33_100_F(values) {
 
 
         else
-            if (CAP_CUATM_FILIAL === "" && (nonZeroCountR5 === 0)) {
+            if (CAP_CUATM_FILIAL === "" && (nonZeroCount === 0)) {
                 for (var i = 0; i <= 8; i++) {
                     if (i !== 2 && i !== 7) {
                         webform.errors.push({
