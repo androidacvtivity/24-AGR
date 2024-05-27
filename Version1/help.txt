@@ -1,7 +1,264 @@
-
-Buna ziua. 
-Pe ereporting regula de val;idare  33-001 am adaugata ca autocalculare a rd.5 COL(1,3,4,5,6,8)
-
-33-001  Tab.1.1, rd.5 COL(1,3,4,5,6,8) = Tab1.1 rd.(1+2-4) COL(1,3,4,5,6,8)
-
-Verificati 33-001 pe platforma de test. Si  daca e bine. 
+<table id="CAP" class="grid" border="1" cellspacing="0" cellpadding="0" width="100%">
+    <thead>
+        <tr>
+            <td valign="center">
+                <p align="center">
+                    <strong>["Denumirea indicatorilor"]</strong>
+                </p>
+            </td>
+            <td valign="center">
+                <p align="center">
+                    <strong>["Cod rând."]</strong>
+                </p>
+            </td>
+            <td valign="center">
+                <p align="center">
+                    <strong>["Unitatea de măsură"]</strong>
+                </p>
+            </td>
+            <td valign="center">
+                <p align="center">
+                    <strong>["Cantitatea"]</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="center">
+                <p align="center">
+                    <strong>["A"]</strong>
+                </p>
+            </td>
+            <td valign="center">
+                <p align="center">
+                    <strong>["B"]</strong>
+                </p>
+            </td>
+            <td valign="center">
+                <p align="center">
+                    <strong>["C"]</strong>
+                </p>
+            </td>
+            <td valign="center">
+                <p align="center">
+                    <strong>["1"]</strong>
+                </p>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td valign="left">
+                <p align="left">["Lapte de vacă"]</p>
+            </td>
+            <td valign="center">
+                <p align="center">7</p>
+            </td>
+            <td valign="center">
+                <p align="center">["chintale"]</p>
+            </td>
+            <td valign="center">
+                <p align="center">@CAP111_R7_C1_FILIAL;</p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="left">
+                <p align="left">["Lapte de oi"]</p>
+            </td>
+            <td valign="center">
+                <p align="center">8</p>
+            </td>
+            <td valign="center">
+                <p align="center">["chintale"]</p>
+            </td>
+            <td valign="center">
+                <p align="center"></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="left">
+                <p align="left">["Lapte de capră"]</p>
+            </td>
+            <td valign="center">
+                <p align="center">9</p>
+            </td>
+            <td valign="center">
+                <p align="center">["chintale"]</p>
+            </td>
+            <td valign="center">
+                <p align="center"></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="left">
+                <p align="left">
+                    ["Ouă alimentare obţinute de la toate speciile de păsări"]
+                </p>
+            </td>
+            <td valign="center">
+                <p align="center">10</p>
+            </td>
+            <td valign="center">
+                <p align="center">["mii bucăți"]</p>
+            </td>
+            <td valign="center">
+                <p align="center"></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="left">
+                <p align="left">["din care: ouă de găină"]</p>
+            </td>
+            <td valign="center">
+                <p align="center">11</p>
+            </td>
+            <td valign="center">
+                <p align="center">["mii bucăți"]</p>
+            </td>
+            <td valign="center">
+                <p align="center"></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="left">
+                <p align="left">["Producţia de ouă pentru incubare"]</p>
+            </td>
+            <td valign="center">
+                <p align="center">12</p>
+            </td>
+            <td valign="center">
+                <p align="center">["bucăți"]</p>
+            </td>
+            <td valign="center">
+                <p align="center"></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="left">
+                <p align="left">["Lână de oi (în masă fizică)"]</p>
+            </td>
+            <td valign="center">
+                <p align="center">13</p>
+            </td>
+            <td valign="center">
+                <p align="center">["chintale"]</p>
+            </td>
+            <td valign="center">
+                <p align="center"></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="left">
+                <p align="left">["Obţinute pielicele de la miei"]</p>
+            </td>
+            <td valign="center">
+                <p align="center">14</p>
+            </td>
+            <td valign="center">
+                <p align="center">["bucăți"]</p>
+            </td>
+            <td valign="center">
+                <p align="center"></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="left">
+                <p align="left">["Obţinute pielicele de iepuri"]</p>
+            </td>
+            <td valign="center">
+                <p align="center">15</p>
+            </td>
+            <td valign="center">
+                <p align="center">["bucăți"]</p>
+            </td>
+            <td valign="center">
+                <p align="center"></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="left">
+                <p align="left">["Captarea de peşte"]</p>
+            </td>
+            <td valign="center">
+                <p align="center">16</p>
+            </td>
+            <td valign="center">
+                <p align="center">["chintale"]</p>
+            </td>
+            <td valign="center">
+                <p align="center"></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="left">
+                <p align="left">["Producţia de miere de albini – total"]</p>
+            </td>
+            <td valign="center">
+                <p align="center">17</p>
+            </td>
+            <td valign="center">
+                <p align="center">["chintale"]</p>
+            </td>
+            <td valign="center">
+                <p align="center"></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="left">
+                <p align="left">["din care: rezervat miere pentru hrană albinelor"]</p>
+            </td>
+            <td valign="center">
+                <p align="center">18</p>
+            </td>
+            <td valign="center">
+                <p align="center">["chintale"]</p>
+            </td>
+            <td valign="center">
+                <p align="center"></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="left">
+                <p align="left">["Producţia de ceară"]</p>
+            </td>
+            <td valign="center">
+                <p align="center">19</p>
+            </td>
+            <td valign="center">
+                <p align="center">["kg"]</p>
+            </td>
+            <td valign="center">
+                <p align="center"></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="left">
+                <p align="left">
+                    ["Numărul mediu de vaci din cireada de vaci pentru lapte"]
+                </p>
+            </td>
+            <td valign="center">
+                <p align="center">20</p>
+            </td>
+            <td valign="center">
+                <p align="center">["capete"]</p>
+            </td>
+            <td valign="center">
+                <p align="center"></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="left">
+                <p align="left">["Numărul mediu de găini ouătoare"]</p>
+            </td>
+            <td valign="center">
+                <p align="center">21</p>
+            </td>
+            <td valign="center">
+                <p align="center">["capete"]</p>
+            </td>
+            <td valign="center">
+                <p align="center"></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
