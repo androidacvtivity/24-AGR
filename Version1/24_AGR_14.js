@@ -53,6 +53,8 @@ webform.validators.agro24 = function (v, allowOverpass) {
     
     validate33_011(values);
 
+    validate33_012(values);
+
     // Call the 100_F validation function
     // validate33_100_F(values);
 
@@ -630,6 +632,41 @@ function validate33_011(values) {
         }
     }
 }
+
+
+//------------
+
+//Modifica aceasta functie sa fie cu logica Tab.1.1.1, daca rd.14 COL1≠0, atunci Tab.1.2, rd.7 COL1 ≠0  dupa exemplu dat 
+//-------------
+function validate33_012(values) {
+    // 33-011 validation logic
+    for (var i = 1; i <= 2; i++) {
+        if (i !== 20) {
+
+            // Tab. 1.1.1, daca rd.13 COL1≠0, atunci Tab. 1.2, rd.7 COL1≠0
+
+            var CAP11_R13_C = !isNaN(Number(values["CAP111_R13_C" + i])) ? Number(values["CAP111_R13_C" + i]) : 0;
+            var CAP12_R7_C = !isNaN(Number(values["CAP12_R7_C" + i])) ? Number(values["CAP12_R7_C" + i]) : 0;
+
+            if (CAP11_R13_C !== 0 && CAP12_R7_C === 0) {
+                webform.errors.push({
+                    'fieldName': 'CAP12_R7_C' + i,
+                    'weight': 19,
+                    'index': i,
+                    'msg': Drupal.t('Cod eroare: 33-012. [@col] - Tab.1.1.1, rd.13 pe COL (@col), COL(1) ≠ 0 atunci Tab 1.2 Rînd.(7) COL(1) ≠ 0 și invers , @CAP11_R13_C - @CAP12_R7_C ≠ 0', { '@col': i, '@CAP11_R13_C': CAP11_R13_C, '@CAP12_R7_C': CAP12_R7_C })
+                });
+            } else if (CAP11_R13_C === 0 && CAP12_R7_C !== 0) {
+                webform.errors.push({
+                    'fieldName': 'CAP111_R13_C' + i,
+                    'weight': 19,
+                    'index': i,
+                    'msg': Drupal.t('Cod eroare: 33-012. [@col] - Tab.1.1.1, rd.13 pe COL (@col), COL(1) ≠ 0 atunci Tab 1.2 Rînd.(7) COL(1) ≠ 0 și invers , @CAP11_R13_C - @CAP12_R7_C ≠ 0', { '@col': i, '@CAP11_R13_C': CAP11_R13_C, '@CAP12_R7_C': CAP12_R7_C })
+                });
+            }
+        }
+    }
+}
+
 
 
 //------------
