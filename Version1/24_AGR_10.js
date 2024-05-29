@@ -46,6 +46,9 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
     validate33_006(values);
 
+    validate33_008(values);
+
+    validate33_009(values);
     // Call the 100_F validation function
     // validate33_100_F(values);
 
@@ -515,6 +518,41 @@ function validate33_008(values) {
                     'weight': 19,
                     'index': i,
                     'msg': Drupal.t('Cod eroare: 33-008. [@col] - Tab.1.1.1, rd.10 pe COL (@col), COL(1) ≠ 0 atunci Tab 1.2 Rînd.(10) COL(1) ≠ 0 și invers , @CAP11_R10_C - @CAP12_R10_C ≠ 0', { '@col': i, '@CAP11_R10_C': CAP11_R10_C, '@CAP12_R10_C': CAP12_R10_C })
+                });
+            }
+        }
+    }
+}
+
+//----------------------------------------------------------------------------
+
+
+
+
+//----------------------------------------------------------------------------
+function validate33_009(values) {
+    // 33-002 validation logic
+    for (var i = 1; i <= 2; i++) {
+        if (i !== 20) {
+
+            //Tab. 1.1.1, daca rd.11 COL1≠0, atunci Tab. 1.2, rd.10 COL1≠0
+
+            var CAP11_R11_C = !isNaN(Number(values["CAP111_R11_C" + i])) ? Number(values["CAP111_R11_C" + i]) : 0;
+            var CAP12_R10_C = !isNaN(Number(values["CAP12_R10_C" + i])) ? Number(values["CAP12_R10_C" + i]) : 0;
+
+            if (CAP11_R11_C !== 0 && CAP12_R10_C === 0) {
+                webform.errors.push({
+                    'fieldName': 'CAP12_R10_C' + i,
+                    'weight': 19,
+                    'index': i,
+                    'msg': Drupal.t('Cod eroare: 33-009. [@col] - Tab.1.1.1, rd.11 pe COL (@col), COL(1) ≠ 0 atunci Tab 1.2 Rînd.(10) COL(1) ≠ 0 și invers , @CAP11_R11_C - @CAP12_R10_C ≠ 0', { '@col': i, '@CAP11_R11_C': CAP11_R11_C, '@CAP12_R10_C': CAP12_R10_C })
+                });
+            } else if (CAP11_R11_C === 0 && CAP12_R10_C !== 0) {
+                webform.errors.push({
+                    'fieldName': 'CAP111_R11_C' + i,
+                    'weight': 19,
+                    'index': i,
+                    'msg': Drupal.t('Cod eroare: 33-009. [@col] - Tab.1.1.1, rd.11 pe COL (@col), COL(1) ≠ 0 atunci Tab 1.2 Rînd.(10) COL(1) ≠ 0 și invers , @CAP11_R11_C - @CAP12_R10_C ≠ 0', { '@col': i, '@CAP11_R11_C': CAP11_R11_C, '@CAP12_R10_C': CAP12_R10_C })
                 });
             }
         }
