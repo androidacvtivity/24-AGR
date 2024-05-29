@@ -61,6 +61,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
     validate33_016(values);
     validate33_017(values);
     validate33_018(values);
+    validate33_019(values);
 
     
     // Call the 100_F validation function
@@ -846,6 +847,33 @@ function validate33_018(values) {
                     'weight': 19,
                     'index': i,
                     'msg': Drupal.t('Cod eroare: 33-018. [@col] - Tab.1.1.1, rd.20 pe COL (@col), COL(1) ≠ 0 atunci Tab 1.1.1, Rînd.(7) COL(1) ≠ 0 și nu invers , @CAP11_R20_C - @CAP11_R7_C ≠ 0', { '@col': i, '@CAP11_R20_C': CAP11_R20_C, '@CAP11_R7_C': CAP11_R7_C })
+                });
+            }
+        }
+    }
+}
+
+
+
+//-------------------------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------
+//Modify this logic in this -- Tab.1.1.1, daca rd.21 COL1≠0, atunci Tab.1.2, rd.10 COL1≠0, si nu invers  ---  logic
+function validate33_019(values) {
+    // 33-019 validation logic
+    for (var i = 1; i <= 2; i++) {
+        if (i !== 20) {
+
+            var CAP11_R21_C = !isNaN(Number(values["CAP111_R21_C" + i])) ? Number(values["CAP111_R21_C" + i]) : 0;
+            var CAP12_R10_C = !isNaN(Number(values["CAP12_R10_C" + i])) ? Number(values["CAP12_R10_C" + i]) : 0;
+
+            if (CAP11_R21_C !== 0 && CAP12_R10_C === 0) {
+                webform.errors.push({
+                    'fieldName': 'CAP12_R10_C' + i,
+                    'weight': 19,
+                    'index': i,
+                    'msg': Drupal.t('Cod eroare: 33-019. [@col] - Tab.1.1.1, rd.21 pe COL (@col), COL(1) ≠ 0 atunci Tab 1.2, Rînd.(10) COL(1) ≠ 0 și nu invers , @CAP11_R21_C - @CAP12_R10_C ≠ 0', { '@col': i, '@CAP11_R21_C': CAP11_R21_C, '@CAP12_R10_C': CAP12_R10_C })
                 });
             }
         }
