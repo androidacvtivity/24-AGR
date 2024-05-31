@@ -45,6 +45,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
     validate33_005(values);
 
     validate33_006(values);
+    validate33_007(values);
 
     validate33_008(values);
 
@@ -894,19 +895,17 @@ function validate33_007(values) {
     for (var i = 1; i <= 2; i++) {
         if (i !== 20) {
 
-            var CAP11_R19_C = !isNaN(Number(values["CAP111_R19_C" + i])) ? Number(values["CAP111_R19_C" + i]) : 0;
-            var CAP11_R17_C = !isNaN(Number(values["CAP111_R17_C" + i])) ? Number(values["CAP111_R17_C" + i]) : 0;
+            var CAP11_R10_C = !isNaN(Number(values["CAP111_R10_C" + i])) ? Number(values["CAP111_R10_C" + i]) : 0;
+            var CAP11_R11_C = !isNaN(Number(values["CAP111_R11_C" + i])) ? Number(values["CAP111_R11_C" + i]) : 0;
 
-            if (CAP11_R19_C !== 0 && CAP11_R17_C === 0) {
+            if (CAP11_R10_C < CAP11_R11_C) {
                 webform.errors.push({
-                    'fieldName': 'CAP111_R17_C' + i,
+                    'fieldName': 'CAP111_R10_C' + i,
                     'weight': 19,
                     'index': i,
-                    'msg': Drupal.t('Cod eroare: 33-007. [@col] - Tab.1.1.1, rd.19 pe COL (@col), COL(1) ≠ 0 atunci Tab 1.1.1, Rînd.(17) COL(1) ≠ 0 și invers , @CAP11_R19_C - @CAP11_R17_C ≠ 0', { '@col': i, '@CAP11_R19_C': CAP11_R19_C, '@CAP11_R17_C': CAP11_R17_C })
+                    'msg': Drupal.t('Cod eroare: 33-007. [@col] - Tab.1.1.1, rd.10 pe COL (@col), COL(1) trebuie să fie ≥ Tab 1.1.1, Rînd.(11) COL(1) , @CAP11_R10_C - @CAP11_R11_C', { '@col': i, '@CAP11_R10_C': CAP11_R10_C, '@CAP11_R11_C': CAP11_R11_C })
                 });
             }
-
-
         }
     }
 }
