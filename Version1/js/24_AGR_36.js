@@ -431,7 +431,7 @@ function validate33_003_F(values) {
                         'fieldName': R7_C !== 0 ? 'CAP12_R3_C' + i + '_FILIAL' : 'CAP11_R7_C' + i + '_FILIAL',
                         'index': j,
                         'weight': 19,
-                        'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-003-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă Rînd.(7) COL(1, 3, 4, 5, 6) ≠ 0 atunci Rînd.(3) COL(1, 3, 4, 5, 6) ≠ 0, @R7_C <> @R3_C ', { '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL, '@col_FILIAL': i, '@R7_C': R7_C, '@R3_C': R3_C })
+                        'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-003-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă Rînd.(7) COL(1) ≠ 0 atunci Rînd.(3) COL(1) ≠ 0, @R7_C <> @R3_C ', { '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL, '@col_FILIAL': i, '@R7_C': R7_C, '@R3_C': R3_C })
                     });
                 }
             }
@@ -506,7 +506,7 @@ function validate33_004_F(values) {
                         'fieldName': R7_C !== 0 ? 'CAP111_R20_C' + i + '_FILIAL' : 'CAP111_R7_C' + i + '_FILIAL',
                         'index': j,
                         'weight': 19,
-                        'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-004-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă Rînd.(7) COL(1, 3, 4, 5, 6) ≠ 0 atunci Rînd.(20) COL(1, 3, 4, 5, 6) ≠ 0, @R7_C <> @R20_C', { '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL, '@col_FILIAL': i, '@R7_C': R7_C, '@R20_C': R20_C })
+                        'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-004-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă Rînd.(7) COL(1) ≠ 0 atunci Rînd.(20) COL(1) ≠ 0, @R7_C <> @R20_C', { '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL, '@col_FILIAL': i, '@R7_C': R7_C, '@R20_C': R20_C })
                     });
                 }
             }
@@ -576,7 +576,7 @@ function validate33_005_F(values) {
                         'fieldName': R8_C !== 0 ? 'CAP12_R7_C' + i + '_FILIAL' : 'CAP111_R8_C' + i + '_FILIAL',
                         'index': j,
                         'weight': 19,
-                        'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-005-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă Rînd.(8) COL(1, 3, 4, 5, 6) ≠ 0 atunci Rînd.(7) COL(1, 3, 4, 5, 6) ≠ 0, @R8_C <> @R7_C', { '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL, '@col_FILIAL': i, '@R8_C': R8_C, '@R7_C': R7_C })
+                        'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-005-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă Rînd.(8) COL(1) ≠ 0 atunci Rînd.(7) COL(1) ≠ 0, @R8_C <> @R7_C', { '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL, '@col_FILIAL': i, '@R8_C': R8_C, '@R7_C': R7_C })
                     });
                 }
             }
@@ -647,7 +647,7 @@ function validate33_006_F(values) {
                         'fieldName': R9_C !== 0 ? 'CAP12_R8_C' + i + '_FILIAL' : 'CAP111_R9_C' + i + '_FILIAL',
                         'index': j,
                         'weight': 19,
-                        'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-006-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă Rînd.(9) COL(1, 3, 4, 5, 6) ≠ 0 atunci Rînd.(8) COL(1, 3, 4, 5, 6) ≠ 0, @R9_C <> @R8_C', { '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL, '@col_FILIAL': i, '@R9_C': R9_C, '@R8_C': R8_C })
+                        'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-006-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă Rînd.(9) COL(1) ≠ 0 atunci Rînd.(8) COL(1) ≠ 0, @R9_C <> @R8_C', { '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL, '@col_FILIAL': i, '@R9_C': R9_C, '@R8_C': R8_C })
                     });
                 }
             }
