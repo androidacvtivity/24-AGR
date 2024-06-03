@@ -29,6 +29,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
     validate33_002(values);
     validate33_002_F(values);
     validate33_003(values);
+    validate33_003_F(values);
     validate33_004(values);
     validate33_005(values);
     validate33_006(values);
@@ -415,8 +416,8 @@ function validate33_003_F(values) {
                 var R7_C = 0, R3_C = 0;
 
                 // Check if properties exist before accessing them
-                if (values["CAP11_R7_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP11_R7_C" + i + "_FILIAL"][j]))) {
-                    R7_C = Number(values["CAP11_R7_C" + i + "_FILIAL"][j]);
+                if (values["CAP111_R7_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP111_R7_C" + i + "_FILIAL"][j]))) {
+                    R7_C = Number(values["CAP111_R7_C" + i + "_FILIAL"][j]);
                 }
 
                 if (values["CAP12_R3_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP12_R3_C" + i + "_FILIAL"][j]))) {
