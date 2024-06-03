@@ -23,47 +23,28 @@ webform.validators.agro24 = function (v, allowOverpass) {
     validatePhoneNumber(values.PHONE);
 
 
-    // Call the 33-001 validation function
+
     validate33_001(values);
-
-    
     validate33_001_F(values);
-
-   
-
     validate33_002(values);
-
-   
     validate33_002_F(values);
-
-
     validate33_003(values);
-   
-    
     validate33_004(values);
-
     validate33_005(values);
-
     validate33_006(values);
-    validate33_007(values);
-
     validate33_008(values);
-
     validate33_009(values);
     validate33_010(values);
-    
     validate33_011(values);
-
     validate33_012(values);
-
     validate33_013(values);
-
     validate33_015(values);
     validate33_016(values);
     validate33_017(values);
     validate33_018(values);
     validate33_019(values);
-
+     validate33_007(values);
+    validate33_014(values);
     
     // Call the 100_F validation function
     // validate33_100_F(values);
