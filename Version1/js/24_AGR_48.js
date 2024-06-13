@@ -877,18 +877,18 @@ function validate33_010_F(values) {
 
         for (var i = 0; i <= 6; i++) {
             if (i !== 2) {
-                var R11_C1 = 0, R10_C2 = 0;
+                var R12_C1 = 0, R10_C2 = 0;
 
                 // Check if properties exist before accessing them
-                if (values["CAP111_R11_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP111_R11_C" + i + "_FILIAL"][j]))) {
-                    R11_C1 = Number(values["CAP111_R11_C" + i + "_FILIAL"][j]);
+                if (values["CAP111_R12_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP111_R12_C" + i + "_FILIAL"][j]))) {
+                    R12_C1 = Number(values["CAP111_R12_C" + i + "_FILIAL"][j]);
                 }
 
                 if (values["CAP12_R10_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP12_R10_C" + i + "_FILIAL"][j]))) {
                     R10_C2 = Number(values["CAP12_R10_C" + i + "_FILIAL"][j]);
                 }
 
-                if (R11_C1 !== 0 && R10_C2 === 0) {
+                if (R12_C1 !== 0 && R10_C2 === 0) {
                     // Create a unique key for this error
                     var errorKey = 'CAP12_R10_C' + i + '_FILIAL_' + j;
 
@@ -902,10 +902,10 @@ function validate33_010_F(values) {
                             'fieldName': 'CAP12_R10_C' + i + '_FILIAL',
                             'index': j,
                             'weight': 19,
-                            'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-010-F. Dacă Tab. 1.1.1, rd.11, COL1 ≠ 0 atunci Tab. 1.2, rd.10, COL1 ≠ 0, @R11_C1 <> @R10_C2', {
+                            'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-010-F. Dacă Tab. 1.1.1, rd.12, COL1 ≠ 0 atunci Tab. 1.2, rd.10, COL1 ≠ 0, @R12_C1 <> @R10_C2', {
                                 '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL,
                                 '@col_FILIAL': i,
-                                '@R11_C1': R11_C1,
+                                '@R12_C1': R12_C1,
                                 '@R10_C2': R10_C2
                             })
                         });
@@ -915,6 +915,7 @@ function validate33_010_F(values) {
         }
     }
 }
+
 
 
 //----------------------------------------------------------------------------
