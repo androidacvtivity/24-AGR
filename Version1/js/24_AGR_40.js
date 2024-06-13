@@ -36,6 +36,8 @@ webform.validators.agro24 = function (v, allowOverpass) {
     validate33_006(values);
     validate33_006_F(values);
     validate33_008(values);
+    validate33_008_F(values);
+
     validate33_009(values);
     validate33_010(values);
     validate33_011(values);
@@ -624,7 +626,7 @@ function validate33_006(values) {
 //This is js code in Drupal
 //Modify this logic in this -- Tab. 1.1.1, daca rd. 9 COL1≠0 atunci Tab. 1.2, rd.8 COL1 ≠0 si invers   ---  logic
 
-
+//This cod enot repeat
 function validate33_006_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
@@ -698,7 +700,6 @@ function validate33_008_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        // Loop for all columns except column 2
         for (var i = 0; i <= 6; i++) {
             if (i !== 2) {
                 var R10_C1 = 0, R10_C1_T2 = 0;
@@ -715,7 +716,10 @@ function validate33_008_F(values) {
                 // Check the condition: If R10_C1 (Tab 1.1.1) ≠ 0 then R10_C1_T2 (Tab 1.2) should also be ≠ 0
                 if (R10_C1 !== 0 && R10_C1_T2 === 0) {
                     webform.errors.push({
-                        'fieldName': 'CAP12_R10_C1_FILIAL',
+//'fieldName': 'CAP12_R10_C1_FILIAL',
+
+
+                        'fieldName':  'CAP12_R10_C' + i + '_FILIAL',
                         'index': j,
                         'weight': 19,
                         'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-008-F. Dacă Tab. 1.1.1, rd.10, COL1 ≠ 0 atunci Tab. 1.2, rd.10, COL1 ≠ 0, @R10_C1 <> @R10_C1_T2', { '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL, '@R10_C1': R10_C1, '@R10_C1_T2': R10_C1_T2 })
@@ -725,6 +729,7 @@ function validate33_008_F(values) {
         }
     }
 }
+
 
 
 //----------------------------------------------------------------------------
