@@ -36,6 +36,8 @@ webform.validators.agro24 = function (v, allowOverpass) {
     validate33_006(values);
     validate33_006_F(values);
     validate33_008(values);
+    validate33_008_F(values);
+
     validate33_009(values);
     validate33_010(values);
     validate33_011(values);
@@ -624,7 +626,7 @@ function validate33_006(values) {
 //This is js code in Drupal
 //Modify this logic in this -- Tab. 1.1.1, daca rd. 9 COL1≠0 atunci Tab. 1.2, rd.8 COL1 ≠0 si invers   ---  logic
 
-
+//This cod enot repeat
 function validate33_006_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
@@ -698,7 +700,6 @@ function validate33_008_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        // Loop for all columns except column 2
         for (var i = 0; i <= 6; i++) {
             if (i !== 2) {
                 var R10_C1 = 0, R10_C1_T2 = 0;
@@ -725,6 +726,7 @@ function validate33_008_F(values) {
         }
     }
 }
+
 
 
 //----------------------------------------------------------------------------
