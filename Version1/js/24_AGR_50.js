@@ -45,6 +45,8 @@ webform.validators.agro24 = function (v, allowOverpass) {
     
     validate33_010(values);
     validate33_011(values);
+
+    validate33_011_F(values);
     validate33_012(values);
     validate33_013(values);
     validate33_015(values);
@@ -582,7 +584,7 @@ function validate33_005_F(values) {
                         'fieldName': R8_C !== 0 ? 'CAP12_R7_C' + i + '_FILIAL' : 'CAP111_R8_C' + i + '_FILIAL',
                         'index': j,
                         'weight': 19,
-                        'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-005-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă Rînd.(8) COL(1) ≠ 0 atunci Rînd.(7) COL(1) ≠ 0, @R8_C <> @R7_C', { '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL, '@col_FILIAL': i, '@R8_C': R8_C, '@R7_C': R7_C })
+                        'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-005-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă Rînd.(8) COL(1) ≠ 0 atunci Rînd.(7) COL(1)  ≠ 0 și invers, @R8_C <> @R7_C', { '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL, '@col_FILIAL': i, '@R8_C': R8_C, '@R7_C': R7_C })
                     });
                 }
             }
