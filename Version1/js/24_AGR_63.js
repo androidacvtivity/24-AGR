@@ -65,6 +65,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
     validate33_019_F(values);
 
     validate33_007(values);
+    validate33_007_F(values);
     validate33_014(values);
     
     // Call the 100_F validation function
@@ -1558,7 +1559,42 @@ function validate33_007(values) {
 
 //-------------------------------------------------------------------------------------------
 
+function validate33_007_F(values) {
+    for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
+        var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
+        for (var i = 1; i <= 2; i++) {
+            if (i !== 20) {
+                var R10_C = 0, R11_C = 0;
+
+                // Check if properties exist before accessing them
+                if (values["CAP111_R10_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP111_R10_C" + i + "_FILIAL"][j]))) {
+                    R10_C = Number(values["CAP111_R10_C" + i + "_FILIAL"][j]);
+                }
+
+                if (values["CAP111_R11_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP111_R11_C" + i + "_FILIAL"][j]))) {
+                    R11_C = Number(values["CAP111_R11_C" + i + "_FILIAL"][j]);
+                }
+
+                if (R10_C < R11_C) {
+                    webform.errors.push({
+                        'fieldName': 'CAP111_R10_C' + i + '_FILIAL',
+                        'index': j,
+                        'weight': 19,
+                        'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-007-F. [@col_FILIAL] - COL(@col_FILIAL), Tab. 1.1.1, rd.10 COL1 trebuie să fie mai mare sau egală cu Tab. 1.1.1, rd.11 COL1, @R10_C < @R11_C', {
+                            '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL,
+                            '@col_FILIAL': i,
+                            '@R10_C': R10_C,
+                            '@R11_C': R11_C
+                        })
+                    });
+                }
+            }
+        }
+    }
+}
+
+//----------------------------------------------------------------------------
 //----------------------------------------------------------------------------
 
 function validate33_014(values) {
