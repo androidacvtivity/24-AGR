@@ -58,7 +58,9 @@ webform.validators.agro24 = function (v, allowOverpass) {
     validate33_017(values);
     validate33_018(values);
     validate33_019(values);
-     validate33_007(values);
+    validate33_019_F(values);
+
+    validate33_007(values);
     validate33_014(values);
     
     // Call the 100_F validation function
