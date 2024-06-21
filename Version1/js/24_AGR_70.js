@@ -167,7 +167,7 @@ function validate33_001_F(values) {
                 R5_C = Number(values["CAP11_R5_C" + i + "_FILIAL"][j]);
             }
 
-            if (values["CAP11_R1_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP1_R1_C" + i + "_FILIAL"][j]))) {
+            if (values["CAP11_R1_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP11_R1_C" + i + "_FILIAL"][j]))) {
                 R1_C = Number(values["CAP11_R1_C" + i + "_FILIAL"][j]);
             }
 
@@ -518,8 +518,8 @@ function validate33_003_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        for (var i = 0; i <= 6; i++) {
-            if (i !== 2) {
+        for (var i = 0; i <= 2; i++) {
+            if (i !== 20) {
                 var R7_C = 0, R3_C = 0;
 
                 // Check if properties exist before accessing them

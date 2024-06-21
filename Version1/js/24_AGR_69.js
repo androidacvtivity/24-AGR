@@ -167,7 +167,7 @@ function validate33_001_F(values) {
                 R5_C = Number(values["CAP11_R5_C" + i + "_FILIAL"][j]);
             }
 
-            if (values["CAP11_R1_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP1_R1_C" + i + "_FILIAL"][j]))) {
+            if (values["CAP11_R1_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP11_R1_C" + i + "_FILIAL"][j]))) {
                 R1_C = Number(values["CAP11_R1_C" + i + "_FILIAL"][j]);
             }
 
