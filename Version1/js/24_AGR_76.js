@@ -167,7 +167,7 @@ function validate33_001_F(values) {
                 R5_C = Number(values["CAP11_R5_C" + i + "_FILIAL"][j]);
             }
 
-            if (values["CAP11_R1_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP1_R1_C" + i + "_FILIAL"][j]))) {
+            if (values["CAP11_R1_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP11_R1_C" + i + "_FILIAL"][j]))) {
                 R1_C = Number(values["CAP11_R1_C" + i + "_FILIAL"][j]);
             }
 
@@ -518,8 +518,8 @@ function validate33_003_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        for (var i = 0; i <= 6; i++) {
-            if (i !== 2) {
+        for (var i = 0; i <= 2; i++) {
+            if (i !== 20) {
                 var R7_C = 0, R3_C = 0;
 
                 // Check if properties exist before accessing them
@@ -623,23 +623,23 @@ function validate33_005(values) {
             var CAP12_R7_C = !isNaN(Number(values["CAP12_R7_C" + i])) ? Number(values["CAP12_R7_C" + i]) : 0;
 
             if (CAP11_R8_C !== 0 && CAP12_R7_C === 0) {
-                webform.errors.push({
+                webform.warnings.push({
                     'fieldName': 'CAP12_R7_C' + i,
                     'weight': 19,
                     'index': i,
-                    'msg': Drupal.t('Cod eroare: 33-005. [@col] - Tab.1.1.1, rd.7 pe COL (@col), COL(1) ≠ 0 atunci Tab 1.2 Rînd.(7) COL(1) ≠ 0 și invers , @CAP11_R8_C - @CAP12_R7_C ≠ 0', { '@col': i, '@CAP11_R8_C': CAP11_R8_C, '@CAP12_R7_C': CAP12_R7_C })
+                    'msg': Drupal.t('Cod eroare: 33-005. [@col] - Tab.1.1.1, rd.8 pe COL (@col), COL(1) ≠ 0 atunci Tab 1.2 Rînd.(7) COL(1) ≠ 0 și invers , @CAP11_R8_C - @CAP12_R7_C ≠ 0', { '@col': i, '@CAP11_R8_C': CAP11_R8_C, '@CAP12_R7_C': CAP12_R7_C })
                 });
             } 
             
             
-            // else if (CAP11_R8_C === 0 && CAP12_R7_C !== 0) {
-            //     webform.errors.push({
-            //         'fieldName': 'CAP111_R8_C' + i,
-            //         'weight': 19,
-            //         'index': i,
-            //         'msg': Drupal.t('Cod eroare: 33-005. [@col] - Tab.1.1.1, rd.7 pe COL (@col), COL(1) ≠ 0 atunci Tab 1.2 Rînd.(7) COL(1) ≠ 0 și invers , @CAP11_R8_C - @CAP12_R7_C ≠ 0', { '@col': i, '@CAP11_R8_C': CAP11_R8_C, '@CAP12_R7_C': CAP12_R7_C })
-            //     });
-            // }
+            else if (CAP11_R8_C === 0 && CAP12_R7_C !== 0) {
+                webform.warnings.push({
+                    'fieldName': 'CAP111_R8_C' + i,
+                    'weight': 19,
+                    'index': i,
+                    'msg': Drupal.t('Cod eroare: 33-005. [@col] - Tab.1.1.1, rd.8 pe COL (@col), COL(1) ≠ 0 atunci Tab 1.2 Rînd.(7) COL(1) ≠ 0 și invers , @CAP11_R8_C - @CAP12_R7_C ≠ 0', { '@col': i, '@CAP11_R8_C': CAP11_R8_C, '@CAP12_R7_C': CAP12_R7_C })
+                });
+            }
         }
     }
 }
@@ -657,8 +657,8 @@ function validate33_005_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        for (var i = 0; i <= 6; i++) {
-            if (i !== 2) {
+        for (var i = 0; i <= 2; i++) {
+            if (i !== 20) {
                 var R8_C = 0, R7_C = 0;
 
                 // Check if properties exist before accessing them
@@ -671,7 +671,7 @@ function validate33_005_F(values) {
                 }
 
                 if ((R8_C !== 0 && R7_C === 0) || (R8_C === 0 && R7_C !== 0)) {
-                    webform.errors.push({
+                    webform.warnings.push({
                         'fieldName': R8_C !== 0 ? 'CAP12_R7_C' + i + '_FILIAL' : 'CAP111_R8_C' + i + '_FILIAL',
                         'index': j,
                         'weight': 19,
@@ -697,7 +697,7 @@ function validate33_006(values) {
             var CAP12_R8_C = !isNaN(Number(values["CAP12_R8_C" + i])) ? Number(values["CAP12_R8_C" + i]) : 0;
 
             if (CAP11_R9_C !== 0 && CAP12_R8_C === 0) {
-                webform.errors.push({
+                webform.warnings.push({
                     'fieldName': 'CAP12_R8_C' + i,
                     'weight': 19,
                     'index': i,
@@ -705,14 +705,14 @@ function validate33_006(values) {
                 });
             } 
             
-            // else if (CAP11_R9_C === 0 && CAP12_R8_C !== 0) {
-            //     webform.errors.push({
-            //         'fieldName': 'CAP111_R9_C' + i,
-            //         'weight': 19,
-            //         'index': i,
-            //         'msg': Drupal.t('Cod eroare: 33-006. [@col] - Tab.1.1.1, rd.9 pe COL (@col), COL(1) ≠ 0 atunci Tab 1.2 Rînd.(8) COL(1) ≠ 0 și invers , @CAP11_R9_C - @CAP12_R8_C ≠ 0', { '@col': i, '@CAP11_R9_C': CAP11_R9_C, '@CAP12_R8_C': CAP12_R8_C })
-            //     });
-            // }
+            else if (CAP11_R9_C === 0 && CAP12_R8_C !== 0) {
+                webform.warnings.push({
+                    'fieldName': 'CAP111_R9_C' + i,
+                    'weight': 19,
+                    'index': i,
+                    'msg': Drupal.t('Cod eroare: 33-006. [@col] - Tab.1.1.1, rd.9 pe COL (@col), COL(1) ≠ 0 atunci Tab 1.2 Rînd.(8) COL(1) ≠ 0 și invers , @CAP11_R9_C - @CAP12_R8_C ≠ 0', { '@col': i, '@CAP11_R9_C': CAP11_R9_C, '@CAP12_R8_C': CAP12_R8_C })
+                });
+            }
         }
     }
 }
@@ -728,8 +728,8 @@ function validate33_006_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        for (var i = 0; i <= 6; i++) {
-            if (i !== 2) {
+        for (var i = 0; i <= 2; i++) {
+            if (i !== 20) {
                 var R9_C = 0, R8_C = 0;
 
                 // Check if properties exist before accessing them
@@ -741,12 +741,15 @@ function validate33_006_F(values) {
                     R8_C = Number(values["CAP12_R8_C" + i + "_FILIAL"][j]);
                 }
 
-                if ((R9_C !== 0 && R8_C === 0) || (R9_C === 0 && R8_C !== 0)) {
-                    webform.errors.push({
+                if ((R9_C !== 0 && R8_C === 0) || (R9_C === 0 && R8_C !== 0)) 
+                    
+                    
+                {
+                    webform.warnings.push({
                         'fieldName': R9_C !== 0 ? 'CAP12_R8_C' + i + '_FILIAL' : 'CAP111_R9_C' + i + '_FILIAL',
                         'index': j,
                         'weight': 19,
-                        'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-006-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă Rînd.(9) COL(1) ≠ 0 atunci Rînd.(8) COL(1) ≠ 0, @R9_C <> @R8_C', { '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL, '@col_FILIAL': i, '@R9_C': R9_C, '@R8_C': R8_C })
+                        'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-006-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă Rînd.(9) COL(1) ≠ 0 atunci Rînd.(8) COL(1) ≠ 0 si invers, @R9_C <> @R8_C', { '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL, '@col_FILIAL': i, '@R9_C': R9_C, '@R8_C': R8_C })
                     });
                 }
             }
@@ -825,8 +828,8 @@ function validate33_008_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        for (var i = 0; i <= 6; i++) {
-            if (i !== 2) {
+        for (var i = 0; i <= 2; i++) {
+            if (i !== 20) {
                 var R10_C1 = 0, R10_C2 = 0;
 
                 // Check if properties exist before accessing them
@@ -902,8 +905,8 @@ function validate33_009_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        for (var i = 0; i <= 6; i++) {
-            if (i !== 2) {
+        for (var i = 0; i <= 2; i++) {
+            if (i !== 20) {
                 var R11_C1 = 0, R10_C2 = 0;
 
                 // Check if properties exist before accessing them
@@ -998,8 +1001,8 @@ function validate33_010_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        for (var i = 0; i <= 6; i++) {
-            if (i !== 2) {
+        for (var i = 0; i <= 2; i++) {
+            if (i !== 20) {
                 var R12_C1 = 0, R10_C2 = 0;
 
                 // Check if properties exist before accessing them
@@ -1084,8 +1087,8 @@ function validate33_011_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        for (var i = 0; i <= 6; i++) {
-            if (i !== 2) {
+        for (var i = 0; i <= 2; i++) {
+            if (i !== 20) {
                 var R13_C1 = 0, R7_C1 = 0;
 
                 // Check if properties exist before accessing them
@@ -1176,8 +1179,8 @@ function validate33_012_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        for (var i = 0; i <= 6; i++) {
-            if (i !== 2) {
+        for (var i = 0; i <= 2; i++) {
+            if (i !== 20) {
                 var R14_C1 = 0, R7_C1 = 0;
 
                 // Check if properties exist before accessing them
@@ -1270,8 +1273,8 @@ function validate33_013_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        for (var i = 0; i <= 6; i++) {
-            if (i !== 2) {
+        for (var i = 0; i <= 2; i++) {
+            if (i !== 20) {
                 var R15_C1 = 0, R11_C1 = 0;
 
                 // Check if properties exist before accessing them
@@ -1360,8 +1363,8 @@ function validate33_015_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        for (var i = 0; i <= 6; i++) {
-            if (i !== 2) {
+        for (var i = 0; i <= 2; i++) {
+            if (i !== 20) {
                 var R18_C1 = 0, R17_C1 = 0;
 
                 // Check if properties exist before accessing them
@@ -1442,8 +1445,8 @@ function validate33_016_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        for (var i = 0; i <= 6; i++) {
-            if (i !== 2) {
+        for (var i = 0; i <= 2; i++) {
+            if (i !== 20) {
                 var R19_C1 = 0, R17_C1 = 0;
 
                 // Check if properties exist before accessing them
@@ -1551,8 +1554,8 @@ function validate33_018_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        for (var i = 0; i <= 6; i++) {
-            if (i !== 2) {
+        for (var i = 0; i <= 2; i++) {
+            if (i !== 20) {
                 var R20_C1 = 0, R7_C1 = 0;
 
                 // Check if properties exist before accessing them
@@ -1634,8 +1637,8 @@ function validate33_019_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        for (var i = 0; i <= 6; i++) {
-            if (i !== 2) {
+        for (var i = 0; i <= 2; i++) {
+            if (i !== 20) {
                 var R21_C1 = 0, R10_C1 = 0;
 
                 // Check if properties exist before accessing them
@@ -1772,8 +1775,8 @@ function validate33_014_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
-        for (var i = 0; i <= 6; i++) {
-            if (i !== 2) {
+        for (var i = 0; i <= 2; i++) {
+            if (i !== 20) {
                 var R17_C = 0, R18_C = 0;
 
                 // Check if properties exist before accessing them
