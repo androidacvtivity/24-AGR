@@ -1,2 +1,8 @@
-3772289287	8723000
-37722892	1718000
+Add a column on the left with the name - name.
+And assign columns to each row in the xpath column
+the last word after the slash.
+For example.
+name            xpath       
+ENT_NAME	dec/DataSet/Header/ENT_NAME
+And so for all rows.
+After you have modified the excel file, create a link to download it.
