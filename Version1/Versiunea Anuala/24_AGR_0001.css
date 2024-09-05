@@ -1,0 +1,29 @@
+.dynamic-section-index-wrapper label,
+.dynamic-section-cuatm label,
+.dynamic-section-region label,
+.select2-widget-wrapper {
+    display: inline-block;
+    justify-content: space-between;
+}
+
+.dynamic-section-index-wrapper,
+.dynamic-section-cuatm,
+.dynamic-section-region {
+    float: left;
+}
+
+.general-info {
+    padding-bottom: 30px;
+}
+
+.general-info .right {
+    float: right;
+}
+
+.general-info .left {
+    float: left;
+}
+
+.index-field input {
+    width: 40px;
+}
