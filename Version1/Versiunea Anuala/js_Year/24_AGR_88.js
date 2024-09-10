@@ -16,10 +16,23 @@
 
             function toggleCap2(trimValue) {
 
-                    if (trimValue == 4) {
+                    if (trimValue === 4) {
                         // Hide Chapter 1.2 if TRIM == 4
                         jQuery('#header-1-2').hide();  // Hide the header of chapter 1.2
                         jQuery('#CAP12').hide();       // Hide the table related to chapter 1.2
+                        jQuery('#row-header-1').hide();
+                        jQuery('#row-header-2').hide();
+                        jQuery('#row-1').hide();
+                        jQuery('#row-2').hide();
+                        jQuery('#row-3').hide();
+                        jQuery('#row-4').hide();
+                        jQuery('#row-5').hide();
+                        jQuery('#row-6').hide();
+                        jQuery('#row-7').hide();
+                        jQuery('#row-8').hide();
+                        jQuery('#row-9').hide();
+                        jQuery('#row-10').hide();
+                        jQuery('#row-11').hide();
 
                         // Clear all input values and checkboxes in chapter 1.2
                         jQuery('input[name^="CAP12"]').val('');            // Clear text inputs
@@ -28,6 +41,19 @@
                         // Show Chapter 1.2 if TRIM is not 4
                         jQuery('#header-1-2').show();  // Show the header for Chapter 1.2
                         jQuery('#CAP12').show();       // Show the table related to chapter 1.2
+                        jQuery('#row-header-1').show();
+                        jQuery('#row-header-2').show();
+                        jQuery('#row-1').show();
+                        jQuery('#row-2').show();
+                        jQuery('#row-3').show();
+                        jQuery('#row-4').show();
+                        jQuery('#row-5').show();
+                        jQuery('#row-6').show();
+                        jQuery('#row-7').show();
+                        jQuery('#row-8').show();
+                        jQuery('#row-9').show();
+                        jQuery('#row-10').show();
+                        jQuery('#row-11').show();
 
                     }
 
@@ -40,26 +66,13 @@
                 toggleCap2(trimValue);
             });
 
-            // // This function handles showing/hiding chapter 1.2 based on TRIM value.
-            // jQuery('select[name="TRIM"]').change(function () {
-            //     var trimValue = jQuery(this).val(); // Capture the value of TRIM
-
-            //     if (trimValue == 4) {
-            //         // Hide Chapter 1.2 if TRIM == 4
-            //         jQuery('#header-1-2').hide();  // Hide the header of chapter 1.2
-            //         jQuery('#CAP12').hide();       // Hide the table related to chapter 1.2
-
-            //         // Clear all input values and checkboxes in chapter 1.2
-            //         jQuery('input[name^="CAP12"]').val('');            // Clear text inputs
-
-            //     } else {
-            //         // Show Chapter 1.2 if TRIM is not 4
-            //         jQuery('#header-1-2').show();  // Show the header for Chapter 1.2
-            //         jQuery('#CAP12').show();       // Show the table related to chapter 1.2
-
-            //     }
-            // });
-
+         
+            // La submit, revalidează și reaplică logica de ascundere a capitolului II
+            jQuery('#mywebform-edit-form').on('submit', function (event) {
+                var values = Drupal.settings.mywebform.values;
+                var trimValue = values['TRIM']; // Capturăm valoarea TRIM din formular
+                toggleCap2(trimValue);
+            });
 
 
             
@@ -74,6 +87,7 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
 
     trim_cap1_2(values);
+    
     validatePhoneNumber(values.PHONE);
 
 
@@ -172,14 +186,46 @@ function trim_cap1_2(values) {
 
 
     if (TRIM === 4){
-        jQuery('#header-1-2').hide();
-        jQuery('#CAP12').hide();
+        // Hide Chapter 1.2 if TRIM == 4
+        jQuery('#header-1-2').hide();  // Hide the header of chapter 1.2
+        jQuery('#CAP12').hide();       // Hide the table related to chapter 1.2
+        jQuery('#row-header-1').hide();
+        jQuery('#row-header-2').hide();
+        jQuery('#row-1').hide();
+        jQuery('#row-2').hide();
+        jQuery('#row-3').hide();
+        jQuery('#row-4').hide();
+        jQuery('#row-5').hide();
+        jQuery('#row-6').hide();
+        jQuery('#row-7').hide();
+        jQuery('#row-8').hide();
+        jQuery('#row-9').hide();
+        jQuery('#row-10').hide();
+        jQuery('#row-11').hide();
+
+        // Clear all input values and checkboxes in chapter 1.2
         jQuery('input[name^="CAP12"]').val('');            // Clear text inputs
 
+
     }
-    else 
-    jQuery('#header-1-2').show();
-    jQuery('#CAP12').show();
+    else {
+        // Show Chapter 1.2 if TRIM is not 4
+        jQuery('#header-1-2').show();  // Show the header for Chapter 1.2
+        jQuery('#CAP12').show();       // Show the table related to chapter 1.2
+        jQuery('#row-header-1').show();
+        jQuery('#row-header-2').show();
+        jQuery('#row-1').show();
+        jQuery('#row-2').show();
+        jQuery('#row-3').show();
+        jQuery('#row-4').show();
+        jQuery('#row-5').show();
+        jQuery('#row-6').show();
+        jQuery('#row-7').show();
+        jQuery('#row-8').show();
+        jQuery('#row-9').show();
+        jQuery('#row-10').show();
+        jQuery('#row-11').show();
+    }
 
 
 }
