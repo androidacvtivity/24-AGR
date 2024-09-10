@@ -20,6 +20,19 @@
                         // Hide Chapter 1.2 if TRIM == 4
                         jQuery('#header-1-2').hide();  // Hide the header of chapter 1.2
                         jQuery('#CAP12').hide();       // Hide the table related to chapter 1.2
+                        jQuery('#row-header-1').hide();
+                        jQuery('#row-header-2').hide();
+                        jQuery('#row-1').hide();
+                        jQuery('#row-2').hide();
+                        jQuery('#row-3').hide();
+                        jQuery('#row-4').hide();
+                        jQuery('#row-5').hide();
+                        jQuery('#row-6').hide();
+                        jQuery('#row-7').hide();
+                        jQuery('#row-8').hide();
+                        jQuery('#row-9').hide();
+                        jQuery('#row-10').hide();
+                        jQuery('#row-11').hide();
 
                         // Clear all input values and checkboxes in chapter 1.2
                         jQuery('input[name^="CAP12"]').val('');            // Clear text inputs
@@ -28,6 +41,19 @@
                         // Show Chapter 1.2 if TRIM is not 4
                         jQuery('#header-1-2').show();  // Show the header for Chapter 1.2
                         jQuery('#CAP12').show();       // Show the table related to chapter 1.2
+                        jQuery('#row-header-1').show();
+                        jQuery('#row-header-2').show();
+                        jQuery('#row-1').show();
+                        jQuery('#row-2').show();
+                        jQuery('#row-3').show();
+                        jQuery('#row-4').show();
+                        jQuery('#row-5').show();
+                        jQuery('#row-6').show();
+                        jQuery('#row-7').show();
+                        jQuery('#row-8').show();
+                        jQuery('#row-9').show();
+                        jQuery('#row-10').show();
+                        jQuery('#row-11').show();
 
                     }
 
