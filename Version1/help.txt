@@ -1,8 +1,14 @@
-Add a column on the left with the name - name.
-And assign columns to each row in the xpath column
-the last word after the slash.
-For example.
-name            xpath       
-ENT_NAME	dec/DataSet/Header/ENT_NAME
-And so for all rows.
-After you have modified the excel file, create a link to download it.
+Acesta este cap.1.2 Dinamic. 
+Acum trebuie de facut pentru el. 
+
+CAP12_R1_C1_FILIAL	Tabel 1.2 Rînd. 1 col.1	dec/DataSet/Data/CAP/CAP_R[line]/CAP12_R1_C1_FILIAL	CAP		numeric	textfield			0	0	0	0	0	0	0	309	0				table number	0	0	100	0		0						
+CAP12_R2_C1_FILIAL	Tabel 1.2 Rînd. 2 col.1	dec/DataSet/Data/CAP/CAP_R[line]/CAP12_R2_C1_FILIAL	CAP		numeric	textfield			0	0	0	0	0	1	0	309	0				table number	0	0	100	0		0						
+CAP12_R3_C1_FILIAL	Tabel 1.2 Rînd. 3 col.1	dec/DataSet/Data/CAP/CAP_R[line]/CAP12_R3_C1_FILIAL	CAP		numeric	textfield			0	0	0	0	0	0	0	309	0				table number	0	0	100	0		0						
+CAP12_R4_C1_FILIAL	Tabel 1.2 Rînd. 4 col.1	dec/DataSet/Data/CAP/CAP_R[line]/CAP12_R4_C1_FILIAL	CAP		numeric	textfield			0	0	0	0	0	0	0	309	0				table number	0	0	100	0		0						
+CAP12_R5_C1_FILIAL	Tabel 1.2 Rînd. 5 col.1	dec/DataSet/Data/CAP/CAP_R[line]/CAP12_R5_C1_FILIAL	CAP		numeric	textfield			0	0	0	0	0	0	0	309	0				table number	0	0	100	0		0						
+CAP12_R6_C1_FILIAL	Tabel 1.2 Rînd. 6 col.1	dec/DataSet/Data/CAP/CAP_R[line]/CAP12_R6_C1_FILIAL	CAP		numeric	textfield			0	0	0	0	0	1	0	309	0				table number	0	0	100	0		0						
+CAP12_R7_C1_FILIAL	Tabel 1.2 Rînd. 7 col.1	dec/DataSet/Data/CAP/CAP_R[line]/CAP12_R7_C1_FILIAL	CAP		numeric	textfield			0	0	0	0	0	0	0	309	0				table number	0	0	100	0		0						
+CAP12_R8_C1_FILIAL	Tabel 1.2 Rînd. 8 col.1	dec/DataSet/Data/CAP/CAP_R[line]/CAP12_R8_C1_FILIAL	CAP		numeric	textfield			0	0	0	0	0	0	0	309	0				table number	0	0	100	0		0						
+CAP12_R9_C1_FILIAL	Tabel 1.2 Rînd. 9 col.1	dec/DataSet/Data/CAP/CAP_R[line]/CAP12_R9_C1_FILIAL	CAP		numeric	textfield			0	0	0	0	0	0	0	309	0				table number	0	0	100	0		0						
+CAP12_R10_C1_FILIAL	Tabel 1.2 Rînd. 10 col.1	dec/DataSet/Data/CAP/CAP_R[line]/CAP12_R10_C1_FILIAL	CAP		numeric	textfield			0	0	0	0	0	0	0	309	0				table number	0	0	100	0		0						
+CAP12_R11_C1_FILIAL	Tabel 1.2 Rînd. 11 col.1	dec/DataSet/Data/CAP/CAP_R[line]/CAP12_R11_C1_FILIAL	CAP		numeric	textfield			0	0	0	0	0	0	0	309	0				table number	0	0	100	0		0						

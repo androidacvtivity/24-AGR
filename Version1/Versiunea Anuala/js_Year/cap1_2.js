@@ -15,34 +15,41 @@
                 }
             });
 
-            // Funcție pentru a ascunde sau afișa capitolul 1.2 în funcție de TRIM
-            function toggleCap2(trimValue) {
-                if (trimValue == 4) {
-                    // Ascundere capitol 1.2 dacă TRIM este 4
-                    jQuery('#header-1-2').hide();  // Ascunde headerul capitolului 1.2
-                    jQuery('#CAP12').hide();       // Ascunde tabelul corespunzător capitolului 1.2
-                    jQuery('#row-header-1, #row-header-2, #row-1, #row-2, #row-3, #row-4, #row-5, #row-6, #row-7, #row-8, #row-9, #row-10, #row-11').hide();
+            // Funcție pentru a genera dinamica capitolului 1.2
+            function toggleCap12(trimValue) {
+                var cap12Fields = [
+                    "CAP12_R1_C1_FILIAL", "CAP12_R2_C1_FILIAL", "CAP12_R3_C1_FILIAL",
+                    "CAP12_R4_C1_FILIAL", "CAP12_R5_C1_FILIAL", "CAP12_R6_C1_FILIAL",
+                    "CAP12_R7_C1_FILIAL", "CAP12_R8_C1_FILIAL", "CAP12_R9_C1_FILIAL",
+                    "CAP12_R10_C1_FILIAL", "CAP12_R11_C1_FILIAL"
+                ];
 
-                    // Curățăm toate valorile input-urilor din capitolul 1.2
-                    jQuery('input[name^="CAP12"]').val('');
-                    jQuery('input[name^="CAP12"]').prop('checked', false);  // Dacă sunt și checkbox-uri
-                } else if (trimValue == 1 || trimValue == 2 || trimValue == 3) {
-                    // Afișăm capitolul 1.2 dacă TRIM este 1, 2 sau 3
-                    jQuery('#header-1-2').show();  // Afișează headerul capitolului 1.2
-                    jQuery('#CAP12').show();       // Afișează tabelul corespunzător capitolului 1.2
-                    jQuery('#row-header-1, #row-header-2, #row-1, #row-2, #row-3, #row-4, #row-5, #row-6, #row-7, #row-8, #row-9, #row-10, #row-11').show();
+                if (trimValue == 4) {
+                    // Ascunde rândurile și coloanele pentru capitolul 1.2 dinamic
+                    jQuery('#header-1-2').hide();
+                    jQuery('#CAP12').hide();
+                    cap12Fields.forEach(function (field) {
+                        jQuery('input[name="' + field + '"]').val('').hide();
+                    });
+                } else {
+                    // Afișează din nou capitolul 1.2
+                    jQuery('#header-1-2').show();
+                    jQuery('#CAP12').show();
+                    cap12Fields.forEach(function (field) {
+                        jQuery('input[name="' + field + '"]').show();
+                    });
                 }
             }
 
-            // Eveniment pentru a detecta schimbarea valorii select TRIM
+            // Eveniment pentru a detecta schimbarea valorii TRIM
             jQuery('select[name="TRIM"]').change(function () {
                 var trimValue = jQuery(this).val();
-                toggleCap2(trimValue);
+                toggleCap12(trimValue);
             });
 
-            // Apelează funcția toggleCap2 inițial dacă este nevoie
+            // Apel inițial pentru a aplica dinamica
             var initialTrimValue = jQuery('select[name="TRIM"]').val();
-            toggleCap2(initialTrimValue);
+            toggleCap12(initialTrimValue);
         }
     };
 })(jQuery);
