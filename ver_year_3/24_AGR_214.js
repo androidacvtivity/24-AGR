@@ -609,7 +609,7 @@ function validate33_003(values) {
             var CAP11_R7_C = !isNaN(Number(values["CAP111_R7_C" + i])) ? Number(values["CAP111_R7_C" + i]) : 0;
             var CAP12_R3_C = !isNaN(Number(values["CAP12_R3_C" + i])) ? Number(values["CAP12_R3_C" + i]) : 0;
 
-            if (CAP11_R7_C !== 0 && CAP12_R3_C === 0 && TRIM === 4) {
+            if (CAP11_R7_C !== 0 && CAP12_R3_C === 0 && TRIM !== 4) {
                 webform.errors.push({
                     'fieldName': 'CAP12_R3_C' + i,
                     'weight': 19,
