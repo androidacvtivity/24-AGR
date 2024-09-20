@@ -71,8 +71,18 @@ webform.validators.agro24 = function (v, allowOverpass) {
 
     var trimValue = jQuery('select[name="TRIM"]').val();  // Obținem valoarea curentă a TRIM
     if (trimValue =! 4) {
+    
     validate33_003(values);
     validate33_003_F(values);
+    validate33_008(values);
+    validate33_008_F(values);
+    validate33_009(values);
+    validate33_009_F(values);
+    validate33_010_F(values);
+    validate33_010(values);
+
+
+    
     }
     
     
@@ -84,24 +94,17 @@ webform.validators.agro24 = function (v, allowOverpass) {
     validate33_006(values);
     validate33_006_F(values);
 
-    validate33_008(values);
-    validate33_008_F(values);
+ 
 
-    validate33_009(values);
+    
 
-    validate33_009_F(values);
-    validate33_010_F(values);
-
-    validate33_010(values);
     validate33_011(values);
-
     validate33_011_F(values);
     validate33_012(values);
     validate33_012_F(values);
-
     validate33_013(values);
-
     validate33_013_F(values);
+    
     validate33_015(values);
     validate33_015_F(values);
     validate33_016(values);

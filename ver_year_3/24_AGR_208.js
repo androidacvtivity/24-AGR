@@ -69,10 +69,23 @@ webform.validators.agro24 = function (v, allowOverpass) {
     validate33_002(values);
     validate33_002_F(values);
 
-    var trimValue = jQuery('select[name="TRIM"]').val();  // Obținem valoarea curentă a TRIM
+    var TRIM = 0;
+    if (!isNaN(Number(values['TRIM']))) {
+        TRIM = Number(values['TRIM']);
+    }
     if (trimValue =! 4) {
+    
     validate33_003(values);
     validate33_003_F(values);
+    validate33_008(values);
+    validate33_008_F(values);
+    validate33_009(values);
+    validate33_009_F(values);
+    validate33_010_F(values);
+    validate33_010(values);
+
+
+    
     }
     
     
@@ -84,29 +97,26 @@ webform.validators.agro24 = function (v, allowOverpass) {
     validate33_006(values);
     validate33_006_F(values);
 
-    validate33_008(values);
-    validate33_008_F(values);
+ 
 
-    validate33_009(values);
+    
 
-    validate33_009_F(values);
-    validate33_010_F(values);
-
-    validate33_010(values);
     validate33_011(values);
-
     validate33_011_F(values);
     validate33_012(values);
     validate33_012_F(values);
-
     validate33_013(values);
-
     validate33_013_F(values);
+    
     validate33_015(values);
     validate33_015_F(values);
     validate33_016(values);
     validate33_016_F(values);
+
     validate33_017(values);
+    validate33_017_F(values);
+
+
     validate33_018(values);
     validate33_018_F(values);
     validate33_019(values);
@@ -1617,6 +1627,83 @@ function validate33_017(values) {
         }
     }
 }
+
+
+
+// Validarea pentru Cod eroare: 33-017 cu variabila CAP_CUATM_FILIAL
+function validate33_017_F(values) {
+    // Set to keep track of reported errors
+    var reportedErrors = new Set();
+
+    for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
+        var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
+
+        for (var i = 1; i <= 2; i++) {
+            if (i !== 20) {
+
+                var R20_C1 = 0, R3_C1 = 0;
+
+                // Check if properties exist before accessing them
+                if (values["CAP111_R20_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP111_R20_C" + i + "_FILIAL"][j]))) {
+                    R20_C1 = Number(values["CAP111_R20_C" + i + "_FILIAL"][j]);
+                }
+
+                if (values["CAP12_R3_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP12_R3_C" + i + "_FILIAL"][j]))) {
+                    R3_C1 = Number(values["CAP12_R3_C" + i + "_FILIAL"][j]);
+                }
+
+                // If CAP111_R20_C != 0 and CAP12_R3_C == 0
+                if (R20_C1 !== 0 && R3_C1 === 0) {
+                    var errorKey = 'CAP12_R3_C' + i + '_FILIAL_' + j;
+
+                    // Check if this error has already been reported
+                    if (!reportedErrors.has(errorKey)) {
+                        // Mark this error as reported
+                        reportedErrors.add(errorKey);
+
+                        // Add the error message
+                        webform.errors.push({
+                            'fieldName': 'CAP12_R3_C' + i + '_FILIAL',
+                            'index': j,
+                            'weight': 19,
+                            'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-017-F. Dacă Tab. 1.1.1, rd.20, COL1 ≠ 0 atunci Tab. 1.2, Rînd.(3), COL1 ≠ 0, @R20_C1 <> @R3_C1', {
+                                '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL,
+                                '@col_FILIAL': i,
+                                '@R20_C1': R20_C1,
+                                '@R3_C1': R3_C1
+                            })
+                        });
+                    }
+                }
+
+                // If CAP111_R20_C == 0 and CAP12_R3_C != 0
+                else if (R20_C1 === 0 && R3_C1 !== 0) {
+                    var errorKeyInverse = 'CAP111_R20_C' + i + '_FILIAL_' + j;
+
+                    // Check if this error has already been reported
+                    if (!reportedErrors.has(errorKeyInverse)) {
+                        // Mark this error as reported
+                        reportedErrors.add(errorKeyInverse);
+
+                        // Add the error message
+                        webform.errors.push({
+                            'fieldName': 'CAP111_R20_C' + i + '_FILIAL',
+                            'index': j,
+                            'weight': 19,
+                            'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-017-F. Dacă Tab. 1.1.1, rd.20, COL1 = 0 atunci Tab. 1.2, Rînd.(3), COL1 trebuie să fie tot 0, @R20_C1 <> @R3_C1', {
+                                '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL,
+                                '@col_FILIAL': i,
+                                '@R20_C1': R20_C1,
+                                '@R3_C1': R3_C1
+                            })
+                        });
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 //-----------------------------------------------------------------------------
 //Modify this logic in this -- Tab.1.1.1, daca rd.20 COL1≠0, atunciTab.1.1.1, rd.7 COL1 ≠0, si nu invers  ---  logic
