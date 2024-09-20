@@ -1,0 +1,133 @@
+// Now only ome table rows without variables are not hiding correctly.
+
+<table id="CAP" class="CAP-grid" border="1" cellspacing="0" cellpadding="0" width="100%">
+            <thead>
+                <tr>
+                    <td valign="center">
+                        <p align="center">
+                            <strong>Denumirea indicatorilor</strong>
+                        </p>
+                    </td>
+                    <td valign="center">
+                        <p align="center">
+                            <strong>Cod rând.</strong>
+                        </p>
+                    </td>
+                    <td valign="center">
+                        <p align="center">
+                            <strong>Capete</strong>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="center">
+                        <p align="center">
+                            <strong>А</strong>
+                        </p>
+                    </td>
+                    <td valign="bottom">
+                        <p align="center">
+                            <strong>B</strong>
+                        </p>
+                    </td>
+                    <td valign="bottom">
+                        <p align="center">
+                            <strong>1</strong>
+                        </p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="display: none;">
+                    <td valign="bottom">
+                        <p>
+                            <b>BOVINE-TOTAL</b>
+                        </p>
+                    </td>
+                    <td align="center">1</td>
+                    <td align="center"><input type="text" name="CAP12_R1_C1_FILIAL[2]" id="CAP12_R1_C1_FILIAL-2" field="CAP12_R1_C1_FILIAL" class="table number numeric" maxlength="100" value="" row-index="2"></td>
+                </tr>
+                <tr style="display: none;">
+                    <td valign="bottom">
+                        <p>din care: <b>vaci (3+4)</b></p>
+                    </td>
+                    <td align="center">2</td>
+                    <td align="center"><input type="text" name="CAP12_R2_C1_FILIAL[2]" id="CAP12_R2_C1_FILIAL-2" field="CAP12_R2_C1_FILIAL" class="table number autofield numeric" readonly="readonly" maxlength="100" value="" row-index="2"></td>
+                </tr>
+                <tr style="display: none;">
+                    <td valign="bottom">
+                        <p>din ele: vaci pentru lapte</p>
+                    </td>
+                    <td align="center">3</td>
+                    <td align="center"><input type="text" name="CAP12_R3_C1_FILIAL[2]" id="CAP12_R3_C1_FILIAL-2" field="CAP12_R3_C1_FILIAL" class="table number numeric" maxlength="100" value="" row-index="2"></td>
+                </tr>
+                <tr style="display: none;">
+                    <td valign="bottom">
+                        <p>alte vaci</p>
+                    </td>
+                    <td align="center">4</td>
+                    <td align="center"><input type="text" name="CAP12_R4_C1_FILIAL[2]" id="CAP12_R4_C1_FILIAL-2" field="CAP12_R4_C1_FILIAL" class="table number numeric" maxlength="100" value="" row-index="2"></td>
+                </tr>
+                <tr style="display: none;">
+                    <td valign="bottom">
+                        <p>
+                            <b>PORCINE – TOTAL</b>
+                        </p>
+                    </td>
+                    <td align="center">5</td>
+                    <td align="center"><input type="text" name="CAP12_R5_C1_FILIAL[2]" id="CAP12_R5_C1_FILIAL-2" field="CAP12_R5_C1_FILIAL" class="table number numeric" maxlength="100" value="" row-index="2"></td>
+                </tr>
+                <tr style="display: none;">
+                    <td valign="bottom">
+                        <p>
+                            <b>OVINE ŞI CAPRINE – TOTAL (7+8)</b>
+                        </p>
+                    </td>
+                    <td align="center">6</td>
+                    <td align="center"><input type="text" name="CAP12_R6_C1_FILIAL[2]" id="CAP12_R6_C1_FILIAL-2" field="CAP12_R6_C1_FILIAL" class="table number autofield numeric" readonly="readonly" maxlength="100" value="" row-index="2"></td>
+                </tr>
+                <tr style="display: none;">
+                    <td valign="bottom">
+                        <p>din care: ovine</p>
+                    </td>
+                    <td align="center">7</td>
+                    <td align="center"><input type="text" name="CAP12_R7_C1_FILIAL[2]" id="CAP12_R7_C1_FILIAL-2" field="CAP12_R7_C1_FILIAL" class="table number numeric" maxlength="100" value="" row-index="2"></td>
+                </tr>
+                <tr style="display: none;">
+                    <td valign="bottom">
+                        <p>caprine</p>
+                    </td>
+                    <td align="center">8</td>
+                    <td align="center"><input type="text" name="CAP12_R8_C1_FILIAL[2]" id="CAP12_R8_C1_FILIAL-2" field="CAP12_R8_C1_FILIAL" class="table number numeric" maxlength="100" value="" row-index="2"></td>
+                </tr>
+                <tr style="display: none;">
+                    <td valign="bottom">
+                        <p>
+                            <b>CABALINE – TOTAL</b>
+                        </p>
+                    </td>
+                    <td align="center">9</td>
+                    <td align="center"><input type="text" name="CAP12_R9_C1_FILIAL[2]" id="CAP12_R9_C1_FILIAL-2" field="CAP12_R9_C1_FILIAL" class="table number numeric" maxlength="100" value="" row-index="2"></td>
+                </tr>
+                <tr style="display: none;">
+                    <td valign="bottom">
+                        <p>
+                            <b>PĂSĂRI – TOTAL</b>
+                        </p>
+                    </td>
+                    <td align="center">10</td>
+                    <td align="center"><input type="text" name="CAP12_R10_C1_FILIAL[2]" id="CAP12_R10_C1_FILIAL-2" field="CAP12_R10_C1_FILIAL" class="table number numeric" maxlength="100" value="" row-index="2"></td>
+                </tr>
+                <tr style="display: none;">
+                    <td valign="bottom">
+                        <p>
+                            <b>IEPURI – TOTAL</b>
+                        </p>
+                    </td>
+                    <td align="center">11</td>
+                    <td align="center"><input type="text" name="CAP12_R11_C1_FILIAL[2]" id="CAP12_R11_C1_FILIAL-2" field="CAP12_R11_C1_FILIAL" class="table number numeric" maxlength="100" value="" row-index="2"></td>
+                </tr>
+            </tbody>
+        </table>
+
+
