@@ -68,20 +68,6 @@ webform.validators.agro24 = function (v, allowOverpass) {
     validate33_001_F(values);
     validate33_002(values);
     validate33_002_F(values);
-
-    // var TRIM = 0;
-    // if (!isNaN(Number(values['TRIM']))) {
-    //     TRIM = Number(values['TRIM']);
-    // }
-    // if (TRIM =! 4) {
-    
-
-
-
-    
-    // }
-    
-    
     
     validate33_004(values);
     validate33_004_F(values);
@@ -609,7 +595,7 @@ function validate33_003(values) {
             var CAP11_R7_C = !isNaN(Number(values["CAP111_R7_C" + i])) ? Number(values["CAP111_R7_C" + i]) : 0;
             var CAP12_R3_C = !isNaN(Number(values["CAP12_R3_C" + i])) ? Number(values["CAP12_R3_C" + i]) : 0;
 
-            if (CAP11_R7_C !== 0 && CAP12_R3_C === 0 && TRIM === 4) {
+            if (CAP11_R7_C !== 0 && CAP12_R3_C === 0 && TRIM !== 4) {
                 webform.errors.push({
                     'fieldName': 'CAP12_R3_C' + i,
                     'weight': 19,
@@ -634,6 +620,11 @@ function validate33_003(values) {
 //----------------------------------------------------------------------------
 
 function validate33_003_F(values) {
+    var TRIM = 0;
+    if (!isNaN(Number(values['TRIM']))) {
+        TRIM = Number(values['TRIM']);
+    } 
+
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
         var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
 
