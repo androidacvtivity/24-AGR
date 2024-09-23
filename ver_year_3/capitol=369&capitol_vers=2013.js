@@ -114,22 +114,38 @@ function f24AGR_ANUAL_CAPI() {
     setValueIfNonZero(R8_C1, Number(R9_C1.val()) + Number(R10_C1.val()));
     setValueIfNonZero(R11_C1, Number(R13_C1.val()) + Number(R14_C1.val()) + Number(R15_C1.val()) +
         Number(R17_C1.val()) + Number(R18_C1.val()) + Number(R21_C1.val()) + Number(R22_C1.val()));
+
     setValueIfNonZero(R12_C1, Number(R13_C1.val()) + Number(R14_C1.val()) + Number(R15_C1.val()));
+
     setValueIfNonZero(R16_C1, Number(R17_C1.val()) + Number(R18_C1.val()) + Number(R21_C1.val()) + Number(R22_C1.val()));
+
     setValueIfNonZero(R17_C1, Number(R18_C1.val()) + Number(R19_C1.val()));
+
+
     setValueIfNonZero(R20_C1, Number(R21_C1.val()) + Number(R22_C1.val()));
+
     setValueIfNonZero(R23_C1, Number(R2_C1.val()) + Number(R4_C1.val()) + Number(R5_C1.val()) + Number(R7_C1.val()) +
         Number(R9_C1.val()) + Number(R10_C1.val()) + Number(R13_C1.val()) + Number(R14_C1.val()) +
         Number(R15_C1.val()) + Number(R17_C1.val()) + Number(R18_C1.val()) + Number(R21_C1.val()) + Number(R22_C1.val()));
+
+
     setValueIfNonZero(R26_C1, Number(R27_C1.val()) + Number(R28_C1.val()) + Number(R29_C1.val()));
+
     setValueIfNonZero(R30_C1, Number(R31_C1.val()) + Number(R33_C1.val()) + Number(R35_C1.val()));
+
     setValueIfNonZero(R32_C1, Number(R33_C1.val()) + Number(R35_C1.val()));
+
     setValueIfNonZero(R36_C1, Number(R24_C1.val()) + Number(R25_C1.val()) + Number(R27_C1.val()) + Number(R28_C1.val()) +
         Number(R29_C1.val()) + Number(R31_C1.val()) + Number(R33_C1.val()) + Number(R35_C1.val()));
+
     setValueIfNonZero(R37_C1, Number(R38_C1.val()) + Number(R41_C1.val()) + Number(R42_C1.val()));
+
     setValueIfNonZero(R38_C1, Number(R39_C1.val()) + Number(R40_C1.val()));
+
     setValueIfNonZero(R44_C1, Number(R46_C1.val()) + Number(R47_C1.val()) + Number(R48_C1.val()));
+
     setValueIfNonZero(R45_C1, Number(R46_C1.val()) + Number(R47_C1.val()));
+    
     setValueIfNonZero(R49_C1, Number(R38_C1.val()) + Number(R41_C1.val()) + Number(R42_C1.val()) + Number(R46_C1.val()) +
         Number(R47_C1.val()) + Number(R48_C1.val()));
 }
