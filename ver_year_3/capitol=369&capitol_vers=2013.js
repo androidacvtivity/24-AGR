@@ -119,7 +119,10 @@ function f24AGR_ANUAL_CAPI() {
 
     setValueIfNonZero(R16_C1, Number(R17_C1.val()) + Number(R18_C1.val()) + Number(R21_C1.val()) + Number(R22_C1.val()));
 
-    setValueIfNonZero(R17_C1, Number(R18_C1.val()) + Number(R19_C1.val()));
+    
+	
+	
+	setValueIfNonZero(R17_C1, Number(R18_C1.val()) + Number(R19_C1.val()));
 
 
     setValueIfNonZero(R20_C1, Number(R21_C1.val()) + Number(R22_C1.val()));
