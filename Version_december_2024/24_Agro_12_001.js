@@ -322,9 +322,7 @@ function validate33_001_F(values) {
 }
 
 //--------------------------------------------------------------------------------------------------------
-//This is js code in Drupal
-//Modify this logic ( Tab. 1.1 daca rd.2 Col. 1,3,4,5,6 ≠0 atunci Tab.1.1 rd.3 Col. 1,3,4,5,6 ≠0 si invers ) in this
-//-- Tab. 1.1, dacă rd.1 col.1,3,4,5,6,8≠0 atunci Tab.1.1 rd.2 col. 1,3,4,5,6,8≠0  si nu invers  --- logic
+
 
 function validate33_024(values) {
     var columns = [1, 3, 4, 5, 6, 8];
@@ -384,12 +382,6 @@ function validate33_002(values) {
 
 
 
-//-----------------------------------------------------------------------------------
-
-
-//This is js code in Drupal
-//Modify this logic ( Tab. 1.1 daca rd.2 Col. 1,3,4,5,6 ≠0 atunci Tab.1.1 rd.3 Col. 1,3,4,5,6 ≠0 si invers ) in this
-//-- Tab. 1.1, dacă rd.1 col.1,3,4,5,6,8≠0 atunci Tab.1.1 rd.2 col. 1,3,4,5,6,8≠0  si nu invers  --- logic
 
 
 function validate33_024_F(values) {
@@ -432,7 +424,7 @@ function validate33_024_F(values) {
 
 
 
-//-----------------------------------------------------------------------------------
+
 
 
 
@@ -490,125 +482,7 @@ function validate33_002_F(values) {
 
 
 
-//----------------------------------------------------------------------------
 
-
-// function validate33_100_F(values) {
-//     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
-//       //  var CAP_CUATM_FILIAL = isNaN(String(values.CAP_CUATM_FILIAL[j])) ? "" : String(values.CAP_CUATM_FILIAL[j]);
-
-//         var CAP_CUATM_FILIAL = String(values.CAP_CUATM_FILIAL[j]);
-
-//         var nonZeroCount = 0, nonZeroCountR2 = 0, nonZeroCountR3 = 0, nonZeroCountR4 = 0;
-
-//         for (var i = 0; i <= 8; i++) {
-//             if (i !== 2 && i !== 7 && i !== 5) {
-//                 var R5_C = 0, R2_C = 0, R3_C = 0, R4_C = 0;
-
-//                 if (values["CAP11_R5_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP11_R5_C" + i + "_FILIAL"][j]))) {
-//                     R5_C = Number(values["CAP11_R5_C" + i + "_FILIAL"][j]);
-//                 }
-
-//                 if (values["CAP11_R2_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP11_R2_C" + i + "_FILIAL"][j]))) {
-//                     R2_C = Number(values["CAP11_R2_C" + i + "_FILIAL"][j]);
-//                 }
-
-//                 if (values["CAP11_R3_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP11_R3_C" + i + "_FILIAL"][j]))) {
-//                     R3_C = Number(values["CAP11_R3_C" + i + "_FILIAL"][j]);
-//                 }
-
-//                 if (values["CAP11_R4_C" + i + "_FILIAL"] && !isNaN(Number(values["CAP11_R4_C" + i + "_FILIAL"][j]))) {
-//                     R4_C = Number(values["CAP11_R4_C" + i + "_FILIAL"][j]);
-//                 }
-
-
-//                 if (R5_C !== 0) {
-//                     nonZeroCount++;
-//                 }
-
-//                 if (R2_C !== 0) {
-//                     nonZeroCountR2++;
-//                 }
-
-//                 if (R3_C !== 0) {
-//                     nonZeroCountR3++;
-//                 }
-
-//                 if (R4_C !== 0) {
-//                     nonZeroCountR4++;
-//                 }
-
-
-
-//             }
-//         }
-
-//         // If CAP_CUATM_FILIAL is not empty and all relevant columns are zero
-//         if (CAP_CUATM_FILIAL !== "" && (nonZeroCount === 0)) {
-//             for (var i = 0; i <= 8; i++) {
-//                 if (i !== 2 && i !== 7 && i !== 5) {
-//                     webform.errors.push({
-//                         'fieldName': 'CAP11_R2_C' + i + '_FILIAL',
-//                         'index': j,
-//                         'weight': 19,
-//                         'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-100-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă exstă filial atunci exstă și date, @R5_C', {
-//                             '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL,
-//                             '@col_FILIAL': i,
-//                             '@R5_C': 0
-//                         })
-//                     });
-
-//                     webform.errors.push({
-//                         'fieldName': 'CAP11_R3_C' + i + '_FILIAL',
-//                         'index': j,
-//                         'weight': 19,
-//                         'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-100-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă exstă filial atunci exstă și date, @R5_C', {
-//                             '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL,
-//                             '@col_FILIAL': i,
-//                             '@R5_C': 0
-//                         })
-//                     });
-//                 }
-//             }
-//         }
-
-
-//         else
-//             if (CAP_CUATM_FILIAL === "" && (nonZeroCount === 0)) {
-//                 for (var i = 0; i <= 8; i++) {
-//                     if (i !== 2 && i !== 7) {
-//                         webform.errors.push({
-//                             'fieldName': 'CAP11_R2_C' + i + '_FILIAL',
-//                             'index': j,
-//                             'weight': 19,
-//                             'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-100-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă exstă filial atunci exstă și date, @R5_C', {
-//                                 '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL,
-//                                 '@col_FILIAL': i,
-//                                 '@R5_C': 0
-//                             })
-//                         });
-
-//                         webform.errors.push({
-//                             'fieldName': 'CAP11_R3_C' + i + '_FILIAL',
-//                             'index': j,
-//                             'weight': 19,
-//                             'msg': Drupal.t('Raion: @CAP_CUATM_FILIAL - Cod eroare: 33-100-F. [@col_FILIAL] - COL(@col_FILIAL), Dacă exstă filial atunci exstă și date, @R5_C', {
-//                                 '@CAP_CUATM_FILIAL': CAP_CUATM_FILIAL,
-//                                 '@col_FILIAL': i,
-//                                 '@R5_C': 0
-//                             })
-//                         });
-//                     }
-//                 }
-//             }
-//     }
-// }
-
-
-
-
-
-//----------------------------------------------------------------------------
 
 function validate33_003(values) {
     // 33-002 validation logic
@@ -719,8 +593,6 @@ function validate33_004(values) {
 
 //----------------------------------------------------------------------------
 
-//This is js code in Drupal
-//Modify this logic in this -- Tab. 1.1.1, daca rd. 7 COL1 ≠0 atunci Tab 1.1.1, rd.20 COL1 ≠0, si invers ---  logic
 
 
 function validate33_004_F(values) {
@@ -789,8 +661,7 @@ function validate33_005(values) {
 
 //----------------------------------------------------------------------------
 
-//This is js code in Drupal
-//Modify this logic in this -- Tab. 1.1.1, daca rd. 8 COL1 ≠0 atunci Tab.1.2, rd.7 COL1 ≠0 si invers  ---  logic
+
 
 
 function validate33_005_F(values) {
@@ -860,8 +731,7 @@ function validate33_006(values) {
 
 //----------------------------------------------------------------------------
 
-//This is js code in Drupal
-//Modify this logic in this -- Tab. 1.1.1, daca rd. 9 COL1≠0 atunci Tab. 1.2, rd.8 COL1 ≠0 si invers   ---  logic
+
 
 //This cod enot repeat
 function validate33_006_F(values) {
@@ -896,32 +766,6 @@ function validate33_006_F(values) {
 
 
 //----------------------------------------------------------------------------
-
-// //This is js code in Drupal
-// //Modify this logic  (Tab.1.1.1, daca rd.18 COL1≠0, atunci Tab. 1.1.1, rd.17 COL1≠0)
-// //in this -- Tab. 1.1.1, rd.10 COL1 ≥ Tab.1.1.1, rd.11 COL1   ---  logic
-
-// function validate33_007(values) {
-//     for (var i = 1; i <= 2; i++) {
-//         if (i !== 20) {
-//             var CAP11_R10_C = !isNaN(Number(values["CAP111_R10_C" + i])) ? Number(values["CAP111_R10_C" + i]) : 0;
-//             var CAP11_R11_C = !isNaN(Number(values["CAP111_R11_C" + i])) ? Number(values["CAP111_R11_C" + i]) : 0;
-
-//             if (CAP11_R10_C < CAP11_R11_C) {
-//                 webform.errors.push({
-//                     'fieldName': 'CAP111_R10_C' + i,
-//                     'weight': 19,
-//                     'index': i,
-//                     'msg': Drupal.t('Cod eroare: 33-007. [@col] - Tab.1.1.1, rd.10 pe COL (@col) trebuie să fie mai mare sau egală cu Tab.1.1.1, rd.11 pe COL (@col), @CAP11_R10_C < @CAP11_R11_C', {
-//                         '@col': i,
-//                         '@CAP11_R10_C': CAP11_R10_C,
-//                         '@CAP11_R11_C': CAP11_R11_C
-//                     })
-//                 });
-//             }
-//         }
-//     }
-// }
 
 
 
@@ -958,8 +802,7 @@ function validate33_008(values) {
 
 //----------------------------------------------------------------------------
 
-//This is js code in Drupal
-//Modify this logic in this -- Tab. 1.1.1, daca rd. 9 COL1≠0 atunci Tab. 1.2, rd.8 COL1 ≠0 si invers   ---  logic
+
 
 function validate33_008_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
@@ -1032,8 +875,6 @@ function validate33_009(values) {
 
 //----------------------------------------------------------------------------
 
-//This is js code in Drupal
-//Modify this logic in this -- Tab. 1.1.1, daca rd.11 COL1≠0, atunci Tab. 1.2, rd.10 COL1≠0   ---  logic
 
 function validate33_009_F(values) {
     // Set to keep track of reported errors
@@ -1089,7 +930,7 @@ function validate33_009_F(values) {
 //----------------------------------------------------------------------------
 
 
-//Modifica aceasta functie sa fie cu logica Tab.1.1.1, daca rd.13 COL1≠0, atunci Tab.1.2, rd.7 COL1 ≠0  dupa exemplu dat 
+
 //----------------------------------------------------------------------------
 function validate33_010(values) {
     // 33-010 validation logic
@@ -1128,8 +969,7 @@ function validate33_010(values) {
 
 //----------------------------------------------------------------------------
 
-//This is js code in Drupal
-//Modify this logic in this -- Tab.1.1.1, daca rd.12 COL1≠0, atunci Tab.1.2, rd.10 COL1≠0  ---  logic
+
 
 function validate33_010_F(values) {
     // Set to keep track of reported errors
@@ -1272,7 +1112,7 @@ function validate33_011_F(values) {
 
 
 
-//Modifica aceasta functie sa fie cu logica Tab.1.1.1, daca rd.14 COL1≠0, atunci Tab.1.2, rd.7 COL1 ≠0  dupa exemplu dat 
+
 //-------------
 function validate33_012(values) {
     // 33-011 validation logic
@@ -1306,8 +1146,6 @@ function validate33_012(values) {
 }
 
 
-//This is js code in Drupal
-//Modify this logic in this -- Tab.1.1.1, daca rd.14 COL1≠0, atunci Tab.1.2, rd.7 COL1 ≠0  ---  logic
 
 function validate33_012_F(values) {
     // Set to keep track of reported errors
@@ -1361,7 +1199,7 @@ function validate33_012_F(values) {
 //----------------------------------------------------------------------------
 
 
-//Modifica aceasta functie sa fie cu logica -- Tab.1.1.1, daca rd.15 COL1≠0, atunci Tab.1.2, rd.11 COL1 ≠0 --  dupa exemplu dat 
+
 //-------------
 function validate33_013(values) {
     // 33-013 validation logic
@@ -1401,8 +1239,6 @@ function validate33_013(values) {
 
 
 
-//This is js code in Drupal
-//Modify this logic in this -- Tab.1.1.1, daca rd.15 COL1≠0, atunci Tab.1.2, rd.11 COL1 ≠0  ---  logic
 function validate33_013_F(values) {
     // Set to keep track of reported errors
     var reportedErrors = new Set();
@@ -1544,7 +1380,7 @@ function validate33_015_F(values) {
 //----------------------------------------------------------------------------
 
 
-//Modify this logic in this -- Tab.1.1.1, daca rd.19 COL1≠0, atunci Tab.1.1.1, rd.17 COL1≠0 ---  logic
+
 function validate33_016(values) {
     // 33-016 validation logic
     for (var i = 1; i <= 2; i++) {
@@ -1573,8 +1409,6 @@ function validate33_016(values) {
 
 //----------------------------------------------------------------------------
 
-//Modify this logic (Tab.1.1.1, daca rd.19 COL1≠0, atunci Tab.1.1.1, rd.17 COL1≠0) in this
-//-- Tab.1.1.1, daca rd.18 COL1≠0, atunci Tab. 1.1.1, rd.17 COL1≠0 ---  logic
 function validate33_016_F(values) {
     // Set to keep track of reported errors
     var reportedErrors = new Set();
@@ -1628,7 +1462,7 @@ function validate33_016_F(values) {
 //----------------------------------------------------------------------------
 
 
-//Modify this logic in this -- Tab.1.1.1, daca rd.20 COL1≠0, atunciTab.1.2, rd.3 COL1 ≠0, si invers  ---  logic
+
 function validate33_017(values) {
     // 33-017 validation logic
     for (var i = 1; i <= 2; i++) {
@@ -1658,7 +1492,6 @@ function validate33_017(values) {
 
 
 
-// Validarea pentru Cod eroare: 33-017 cu variabila CAP_CUATM_FILIAL
 function validate33_017_F(values) {
     // Set to keep track of reported errors
     var reportedErrors = new Set();
@@ -1733,8 +1566,7 @@ function validate33_017_F(values) {
 }
 
 
-//-----------------------------------------------------------------------------
-//Modify this logic in this -- Tab.1.1.1, daca rd.20 COL1≠0, atunciTab.1.1.1, rd.7 COL1 ≠0, si nu invers  ---  logic
+
 function validate33_018(values) {
     // 33-018 validation logic
     for (var i = 1; i <= 2; i++) {
@@ -1757,9 +1589,7 @@ function validate33_018(values) {
 
 
 
-//-------------------------------------------------------------------------------------------
 
-//----------------------------------------------------------------------------
 
 function validate33_018_F(values) {
     // Set to keep track of reported errors
@@ -1978,12 +1808,7 @@ function validate33_014(values) {
 }
 
 
-//-------------------------------------------------------------------------------------------
 
-//Modify this logic ( Tab. 1.1.1, rd.10 COL1 ≥ Tab.1.1.1, rd.11 COL1 ) in this
-//-- Tab.1.1.1, rd.17 COL1 ≥ Tab.1.1.1, rd.18 COL1 ---  logic
-
-//-------------------------------------------------------------------------------------------
 
 function validate33_014_F(values) {
     for (var j = 0; j < values.CAP_NUM_FILIAL.length; j++) {
