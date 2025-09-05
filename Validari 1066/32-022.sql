@@ -1,0 +1,33 @@
+SELECT DISTINCT 
+   'Rind.'||D.RIND||':COL='||DECODE(CC.NR_COLUMN, '1', 'COL1 ','2', 'COL2 ', '3', 'COL3 ', '4', 'COL4 ')||': PERIOADA='||
+   NVAL(SUM(CASE WHEN D.PERIOADA IN (:PERIOADA) AND P.NUM IN (2,3,4) THEN DECODE(CC.NR_COLUMN, '1', D.COL1, '2', D.COL2, '3', D.COL3, '4', D.COL4) END)) ||' < '||
+  'PERIOADA-1='||NVAL(SUM(CASE WHEN D.PERIOADA IN (:PERIOADA-1) AND P.NUM IN (1,2,3) THEN DECODE(CC.NR_COLUMN, '1', D.COL1, '2', D.COL2, '3', D.COL3, '4', D.COL4) END))
+  AS REZULTAT
+
+FROM
+  VW_DATA_ALL_TEMP D
+  INNER JOIN MD_PERIOADA P ON (D.PERIOADA=P.PERIOADA),
+       (                                                                        
+       SELECT '1' AS NR_COLUMN FROM DUAL UNION                                  
+       SELECT '2' AS NR_COLUMN FROM DUAL UNION                                  
+       SELECT '3' AS NR_COLUMN FROM DUAL UNION                                  
+       SELECT '4' AS NR_COLUMN FROM DUAL                              
+       ) CC
+WHERE
+  (D.PERIOADA IN (:PERIOADA,:PERIOADA-1)          ) AND
+  (D.CUIIO=:CUIIO                ) AND
+  (D.CUIIO_VERS=:CUIIO_VERS     OR :CUIIO_VERS = -1) AND
+  (D.FORM = :FORM               ) AND
+  (D.FORM_VERS=:FORM_VERS ) AND
+  (D.CAPITOL=:CAPITOL           OR :CAPITOL = -1) AND
+  (D.CAPITOL_VERS=:CAPITOL_VERS OR :CAPITOL_VERS = -1) AND
+  (D.ID_MD=:ID_MD               OR :ID_MD = -1) AND
+  
+  D.FORM IN (33)  AND
+  D.CAPITOL IN (379,380)
+GROUP BY
+  D.RIND,
+  CC.NR_COLUMN
+HAVING
+  NVAL(SUM(CASE WHEN D.PERIOADA IN (:PERIOADA) AND P.NUM IN (2,3,4) THEN DECODE(CC.NR_COLUMN, '1', D.COL1, '2', D.COL2, '3', D.COL3, '4', D.COL4) END))  < 
+  NVAL(SUM(CASE WHEN D.PERIOADA IN (:PERIOADA-1) AND P.NUM IN (1,2,3) THEN DECODE(CC.NR_COLUMN, '1', D.COL1, '2', D.COL2, '3', D.COL3, '4', D.COL4) END))
