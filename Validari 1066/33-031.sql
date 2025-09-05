@@ -1,0 +1,61 @@
+
+SELECT DISTINCT 
+'Rind.'||D.RIND||':COL='|| DECODE(CC.NR_COLUMN, '1', 'COL1 ','2', 'COL2 ', '3', 'COL3 ', '4', 'COL4 ', '5', 'COL5 ', '6', 'COL6 ', '7', 'COL7 ', '8', 'COL8 ')||': '||
+    CIS2.NVAL(SUM(CASE WHEN D.CAPITOL IN (380)  AND D.PERIOADA IN (:PERIOADA) AND P.NUM IN (2,3,4) THEN DECODE(CC.NR_COLUMN, '1', D.COL1, '3', D.COL3, '4', D.COL4, '5', D.COL5, '6', D.COL6, '8', D.COL8) ELSE 0 END))|| ' < ' ||
+    CIS2.NVAL(SUM(CASE WHEN D.CAPITOL IN (380)  AND D.PERIOADA IN (:PERIOADA - 1 ) AND P.NUM IN (1,2,3)  THEN DECODE(CC.NR_COLUMN, '1', D.COL1, '3', D.COL3, '4', D.COL4, '5', D.COL5, '6', D.COL6, '8', D.COL8) ELSE 0 END))
+  
+  
+  AS REZULTAT
+  
+
+
+FROM
+  CIS2.VW_DATA_ALL D
+   INNER JOIN MD_PERIOADA P ON (D.PERIOADA=P.PERIOADA),
+               
+       (                                                                        
+       SELECT '1' AS NR_COLUMN FROM DUAL                                 
+                                       
+                           
+       ) CC  
+WHERE
+  (D.PERIOADA IN (:PERIOADA, :PERIOADA-1) ) AND
+  (D.CUIIO=:CUIIO        ) AND
+  (D.CUIIO_VERS=:CUIIO_VERS     OR :CUIIO_VERS = -1) AND
+  (D.FORM = :FORM       ) AND
+  (D.FORM_VERS=:FORM_VERS ) AND
+  (:CAPITOL=:CAPITOL           OR :CAPITOL <>  :CAPITOL ) AND
+  (:CAPITOL_VERS=:CAPITOL_VERS OR  :CAPITOL_VERS <>  :CAPITOL_VERS ) AND
+  (D.ID_MD=:ID_MD               OR :ID_MD = -1) AND
+  
+  D.FORM IN (33) -- AND
+  AND D.CAPITOL IN (380) 
+  AND D.RIND NOT IN ('20','21')
+GROUP BY
+  CC.NR_COLUMN,
+    D.RIND
+HAVING
+    CIS2.NVAL(SUM(CASE WHEN D.CAPITOL IN (380)  AND D.PERIOADA IN (:PERIOADA) AND P.NUM IN (2,3,4)   THEN DECODE(CC.NR_COLUMN, '1', D.COL1, '3', D.COL3, '4', D.COL4, '5', D.COL5, '6', D.COL6, '8', D.COL8) ELSE 0 END)) <
+    CIS2.NVAL(SUM(CASE WHEN D.CAPITOL IN (380)  AND D.PERIOADA IN (:PERIOADA - 1) AND P.NUM IN (1,2,3) THEN DECODE(CC.NR_COLUMN, '1', D.COL1, '3', D.COL3, '4', D.COL4, '5', D.COL5, '6', D.COL6, '8', D.COL8) ELSE 0 END))
+    
+    AND 
+    
+    (
+    SELECT
+  'Cap. SR: RIND.01 ' AS REZULTAT
+FROM
+  VW_DATA_ALL D
+WHERE
+  (D.PERIOADA = :PERIOADA) AND
+  (D.CUIIO=:CUIIO ) AND
+  (D.FORM = :FORM               ) AND
+
+  D.FORM IN (33) 
+  
+HAVING
+  
+  SUM(CASE WHEN D.CAPITOL=1201 AND D.RIND IN('01') THEN NVAL(D.COL1) ELSE 0 END) > 0 
+    ) IS NOT NULL
+    
+
+  
