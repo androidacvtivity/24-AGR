@@ -1,8 +1,5 @@
-
-
-
-
-          SELECT *  
+SELECT 
+        DISTINCT CUIIO
           
           
            FROM   USER_EREPORTING.DATA_ALL_FOR_VALIDATE
